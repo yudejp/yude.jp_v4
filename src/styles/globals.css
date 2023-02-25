@@ -5,3 +5,7 @@
 button {
     min-width: 3rem;
 }
+
+.search-menu {
+    margin: 0 auto;
+}
