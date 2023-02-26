@@ -1,9 +1,10 @@
 import Head from "next/head";
 
-export default function Title({ title }: { title: string }) {
+import Title from "./Title"
+
+export default function Seo({ title }: { title: string }) {
     return (
         <Head>
-            <Title title={title} />
             <meta content="width=device-width,initial-scale=1.0" />
             <meta name="description" content={title + " - yude.jp"} />
             <meta property="og:title" content={title} />
