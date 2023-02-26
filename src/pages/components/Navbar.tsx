@@ -23,10 +23,8 @@ export default function Navbar({ ...props }) {
             <div className="container ml-5 mr-5 mt-4 aligns-items-center">
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <Link href="/" legacyBehavior>
-                            <a className="nav-link disabled text-body" tabIndex={-1} aria-disabled="true">
-                                yude.jp
-                            </a>
+                        <Link className="nav-link text-body" href="/" tabIndex={-1}>
+                            yude.jp
                         </Link>
                     </li>
 
