@@ -1,6 +1,11 @@
-import { useRouter } from 'next/router'
+import {
+    GetStaticPaths,
+    GetStaticProps,
+    InferGetStaticPropsType,
+    NextPage,
+} from "next";
 
-import { createClient } from "microcms-js-sdk";
+import { client } from "../libs/client";
 import type { Blog } from "@/types/blog";
 
 import Seo from "../components/Seo"
@@ -9,30 +14,21 @@ import Title from "../components/Title"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faTags } from "@fortawesome/free-solid-svg-icons";
+import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
-export const getStaticPaths = async () => {
-    const microcms_key = process.env.MICROCMS_KEY != undefined ? process.env.MICROCMS_KEY : '';
-
-    const client = createClient({
-        serviceDomain: 'yude',
-        apiKey: microcms_key,
-    });
-
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
     const data = await client.get({ endpoint: "blog" });
 
-    const paths = data.contents.map((content) => `/blog/${content.id}`);
+    const paths = data.contents.map((content: Blog) => `/blog/${content.id}`);
     return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context) => {
-    const microcms_key = process.env.MICROCMS_KEY != undefined ? process.env.MICROCMS_KEY : '';
+type Props = {
+    blog: Blog;
+};
 
-    const client = createClient({
-        serviceDomain: 'yude',
-        apiKey: microcms_key,
-    });
-
-    const id = context.params.id;
+export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
+    const id = context.params?.id;
     const data = await client.get({ endpoint: "blog", contentId: id });
 
     return {
@@ -42,9 +38,11 @@ export const getStaticProps = async (context) => {
     };
 };
 
-function BlogPost({ blog }: { blog: Blog }) {
+const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+    blog,
+}: Props) => {
     return (
-        <div>
+        <main>
             <Ogp title={blog.title} />
             <Title title={blog.title + " - ブログ"} />
             <Seo title={blog.title + " - ブログ"} />
@@ -63,8 +61,8 @@ function BlogPost({ blog }: { blog: Blog }) {
                 </div>
             </div>
             <div className="mt-3" dangerouslySetInnerHTML={{ __html: blog.content }}></div>
-        </div>
-    )
+        </main>
+    );
 }
 
-export default BlogPost
+export default BlogId
