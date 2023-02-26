@@ -5,7 +5,7 @@ import {
     NextPage,
 } from "next";
 
-import { client } from "../libs/client";
+import { client } from "../../lib/client";
 import type { Blog } from "@/types/blog";
 
 import Seo from "../components/Seo"
