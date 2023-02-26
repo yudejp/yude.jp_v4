@@ -1,12 +1,17 @@
+import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faUser, faBlog, faComment, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import { useState, useRef } from "react";
-import React from "react";
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
+
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { useTheme } from '../../lib/theme'
 
 export default function Navbar() {
     const [isFocus, setFocus] = useState(false);
@@ -14,12 +19,14 @@ export default function Navbar() {
 
     const textInput = useRef(null);
 
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <>
             <div className="container ml-5 mr-5 mt-4 aligns-items-center">
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <Link className="nav-link text-body" href="/" tabIndex={-1}>
+                        <Link className="nav-link" href="/" tabIndex={-1}>
                             yude.jp
                         </Link>
                     </li>
@@ -40,6 +47,7 @@ export default function Navbar() {
                     <li className="nav-item">
                         <a className="nav-link" href="/profile"><FontAwesomeIcon icon={faUser} width={20} /> プロフィール</a>
                     </li>
+                    <button type="button" className="btn btn-secondary" onClick={toggleTheme}>{theme === "light" ? "🌙" : "🌅"}</button>
                 </ul>
 
             </div>
