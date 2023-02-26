@@ -92,12 +92,16 @@ export default function Navbar({ ...props }) {
                             <div className="tab-pane fade" id="external-links-tab-pane" role="tabpanel" aria-labelledby="external-links-tab" tabIndex={0}>
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faDiscord} /> Discord サーバー</span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faDiscord} /> <a href="https://discord.gg/X6srY7X">Discord サーバー</a></span>
                                         <small className="text-muted d-block">自由に会話（合法的に）</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faGithub} /> GitHub Organization</span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faGithub} /> <a href="https://github.com/yudejp">GitHub Organization</a></span>
                                         <small className="text-muted d-block">大したソースコードを公開</small>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <span className="d-block"><FontAwesomeIcon icon={faCheck} /> <a href="https://status.yude.jp">サーバーの稼働状況</a></span>
+                                        <small className="text-muted d-block">ダウンしていたら本当に申し訳ない</small>
                                     </li>
                                 </ul>
                             </div>
