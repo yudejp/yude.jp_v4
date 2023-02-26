@@ -1,32 +1,20 @@
 import Title from './components/Title'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope, } from "@fortawesome/free-solid-svg-icons";
+
+import Image from 'next/image';
+
 <Title title="プロフィール" />
 
-<h1 id="name">yude</h1>
-<img src="/assets/images/avatar.jpg" style="max-width: 200px; border-radius: 50%" className="mawaru" />
-
-* アイコン: [Minkasy](https://twitter.com/xmnts) さんより
-
-<div className="card" style="max-width: 30rem">
-  <div className="card-body">
-    <small>再生中</small>
-    <h5 className="card-title" id="spotify_title">何も再生していません。</h5>
-    <h6 className="card-subtitle mb-2 text-muted" id="spotify_artist"></h6>
-    <small className="text-muted"><a href="https://spotify.com">Spotify</a> による情報, <a href="https://vercel-spotify-api.vercel.app/api/Spotify">API</a></small>
-  </div>
+<div className="d-flex justify-content-center">
+<span className="d-block fs-3 text-center">yude</span>
+<Image src="/assets/images/avatar.jpg" className="rounded" width={200} height={200} />\
+アイコン: [Minkasy](https://twitter.com/xmnts) さんより
 </div>
 
-<div className="card mt-1" style="max-width: 30rem;">
-  <div className="card-body">
-    <small>プレイ中</small>
-    <h5 className="card-title" id="game_title">何もプレイしていません。</h5>
-    <small className="text-muted"><a href="https://discord.com">Discord</a> による情報</small>
-  </div>
-</div>
-
-<hr>
-
-* 生年月日: 2001 年 11 月 19 日 ({::nomarkdown}<div id="age" style="display: inline"></div>{:/nomarkdown} 歳)
+## ステータス
+* 生年月日: 2001 年 11 月 19 日 (21 歳)
 * 出身地: 日本, 鳥取県 鳥取市
 * 所在地: 日本, 広島県 広島市
 
@@ -57,18 +45,14 @@ import Title from './components/Title'
 
 
 ## 連絡先 / SNS
-<ul>
-    <li><i className="fa-solid fa-phone"></i> 電話: <a href="tel:07089091949">+81 70-8909-1949</a></li>
-    <li>
-        <i className="fa-solid fa-envelope"></i>
-        電子メール: <a href="mailto:{{ 'i@yude.jp' | encode_email }}" rel="me">i&#064;yude.jp</a></li>
-    <li><i className="fa-brands fa-twitter"></i> Twitter: <a href="https://twitter.com/yude_jp" rel="me">@yude_jp</a></li>
-    <li><i className="fa-brands fa-discord"></i> Discord: <a href="https://discord.com/users/116124230243975173" rel="me">yude#3205</a></li>
-    <li><i className="fa-brands fa-telegram"></i> Telegram: <a href="https://t.me/yudejp" rel="me">t.me/yudejp</a></li>
-    <li><i className="fa-brands fa-github"></i> GitHub: <a href="https://github.com/yude" rel="me">yude</a></li>
-    <li><i className="fa-brands fa-mastodon"></i> ActivityPub (Misskey): <a href="https://mi.yude.moe/@yude" rel="me">@yude@mi.yude.moe</a></li>
-    <li><i className="fa-brands fa-keybase"></i> Keybase: <a href="https://keybase.io/yude" rel="me">yude</a></li>
-</ul>
+* 電話: +81 70-8909-1949
+* 電子メール: i@yude.jp
+* Twitter: [@yude_jp](https://twitter.com/yude_jp)
+* Discord: `yude#3205`
+* Telegram: [yudejp](https://t.me/yudejp)
+* GitHub: [yude](https://github.com/yude)
+* Fediverse (Misskey): [@yude@mi.yude.moe](https://mi.yude.moe/@yude)
+* Keybase: [yude](https://keybase.io/yude)
 
 その他のアカウントについては、[こちら](https://scrapbox.io/yude/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88)を御覧ください。
 
@@ -80,61 +64,3 @@ import Title from './components/Title'
 ## 公開鍵
 * [PGP](https://github.com/yude.gpg)
 * [SSH](https://github.com/yude.keys)
-
-<script async>
-    let spotify_req = new XMLHttpRequest();
-    spotify_req.open('GET', 'https://vercel-spotify-api.vercel.app/api/Spotify')
-    spotify_req.responseType = 'json';
-    spotify_req.send();
-    
-    spotify_req.onload = function() {
-        const spotify_res = spotify_req.response;
-        if (spotify_res['isPlaying']) {
-            spotify_title.innerHTML = spotify_res['title'];
-            spotify_artist.innerHTML = spotify_res['artist'];
-        }
-    }
-</script>
-
-<script async>
-    let discord_req = new XMLHttpRequest();
-    discord_req.open('GET', 'https://discord.com/api/guilds/723409709306216498/widget.json')
-    discord_req.responseType = 'json';
-    discord_req.send();
-    
-    discord_req.onload = function() {
-        const discord_res = discord_req.response;
-        if (discord_res.members) {
-            if (discord_res.members[0].game) {
-                game_title.innerHTML = discord_res.members[0].game.name;
-            }
-        }
-    }
-</script>
-
-<script async>
-    const now=new Date();
-    const birth=new Date("2001/11/19");
-  document.getElementById('age').innerHTML=(now.getFullYear() - birth.getFullYear()  +
-    ( new Date( now.getFullYear() , birth.getMonth() , birth.getDate() ).getTime()
-        > now.getTime() ? -1 : 0 ));
-</script>
-
-<script async>
-    let name = 'yude';
-    
-    elm = document.getElementById('name');
-    elm.innerHTML = name;
-    document.getElementById('name').onmouseover = async function() {
-        name += 'e';
-        elm.innerHTML = name;
-        for (;;) {
-            name += 'e';
-            elm.innerHTML = name;
-            if (!(document.getElementById('name').matches(':hover'))) {
-                break;
-            }
-            await new Promise(s => setTimeout(s, 100))
-        }
-    }
-</script>
