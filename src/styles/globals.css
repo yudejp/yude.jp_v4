@@ -9,3 +9,7 @@ button {
 .search-menu {
     margin: 0 auto;
 }
+
+.hr {
+    border-top: 1px solid gray
+}
