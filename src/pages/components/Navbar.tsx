@@ -33,7 +33,7 @@ export default function Navbar() {
                 </ul>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <Link href="/blog">
+                        <Link href="/blog" legacyBehavior>
                             <a className="nav-link active" aria-current="page"><FontAwesomeIcon icon={faBlog} width={20} /> ブログ</a>
                         </Link>
                     </li>
