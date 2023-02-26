@@ -8,15 +8,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
 
-export default function Navbar({ ...props }) {
+export default function Navbar() {
     const [isFocus, setFocus] = useState(false);
     const toggleDropdown = () => setFocus(!isFocus);
 
     const textInput = useRef(null);
-
-    function handleClick() {
-        console.log("aaa")
-    }
 
     return (
         <>
