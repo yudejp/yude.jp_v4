@@ -29,6 +29,7 @@
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.1",
     "flowbite": "^1.6.3",
+    "microcms-js-sdk": "^2.3.2",
     "next": "13.2.1",
     "postcss": "^8.4.21",
     "react": "18.2.0",
