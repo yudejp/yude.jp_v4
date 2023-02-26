@@ -16,6 +16,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faTags } from "@fortawesome/free-solid-svg-icons";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
+import cheerio from 'cheerio';
+import hljs from 'highlight.js'
+import 'highlight.js/styles/night-owl.css';
+
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
     const data = await client.get({ endpoint: "blog" });
 
@@ -25,21 +29,30 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 
 type Props = {
     blog: Blog;
+    highlightedBody: string;
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
     const id = context.params?.id;
     const data = await client.get({ endpoint: "blog", contentId: id });
 
+    const $ = cheerio.load(data.content);
+    $('pre code').each((_, elm) => {
+        const result = hljs.highlightAuto($(elm).text());
+        $(elm).html(result.value);
+        $(elm).addClass('hljs');
+    });
+
     return {
         props: {
             blog: data,
+            highlightedBody: $.html()
         },
     };
 };
 
 const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-    blog,
+    blog, highlightedBody
 }: Props) => {
     return (
         <main>
@@ -60,7 +73,7 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     </div>
                 </div>
             </div>
-            <div className="mt-3" dangerouslySetInnerHTML={{ __html: blog.content }}></div>
+            <div className="mt-3" dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
         </main>
     );
 }
