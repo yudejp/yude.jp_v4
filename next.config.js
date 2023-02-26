@@ -18,6 +18,9 @@ const nextConfig = {
   env: {
     site_name: 'yude.jp',
   },
+  images: {
+    domains: ['images.microcms-assets.io'],
+  },
 }
 
 module.exports = withMDX(nextConfig)
