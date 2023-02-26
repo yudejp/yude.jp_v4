@@ -49,7 +49,7 @@ export default function Navbar({ ...props }) {
             </div>
             {
                 isFocus && (
-                    <div className="card position-absolute top-30 start-50 translate-middle-x">
+                    <div className="card position-absolute top-30 start-50 translate-middle-x z-1000">
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
                                 <button className="nav-link active" id="other-content-tab" data-bs-toggle="tab" data-bs-target="#other-content-tab-pane" type="button" role="tab" aria-controls="other-content-tab-pane" aria-selected="true">その他のコンテンツ</button>
