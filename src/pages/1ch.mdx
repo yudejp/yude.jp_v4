@@ -1,0 +1,19 @@
+import Title from './components/Title'
+import { DiscussionEmbed } from 'disqus-react';
+
+<Title title="1ch" />
+
+* **匿名でコメントできます。**
+    * 「または Disqus に登録」の下にある「名前」をクリックしてから、「ゲストとして投稿する」にチェックを入れてください。
+
+<DiscussionEmbed
+    shortname='yude'
+    config={
+        {
+            url: "https://www.yude.jp/1ch",
+            identifier: "1ch",
+            title: "1ch",
+            language: 'ja_JP'
+        }
+    }
+/>

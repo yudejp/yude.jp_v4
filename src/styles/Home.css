@@ -1,0 +1,16 @@
+.quote-child {
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+}
+
+.quote-parent {
+    position: relative;
+    height: 5rem;
+    z-index: 100;
+}
+
+.misskey-desc {
+    margin: -5px;
+    margin-left: 5px;
+}

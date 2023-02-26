@@ -15,6 +15,9 @@ const withMDX = require('@next/mdx')({
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: false,
+  env: {
+    site_name: 'yude.jp',
+  },
 }
 
 module.exports = withMDX(nextConfig)
