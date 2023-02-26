@@ -2,6 +2,7 @@ import { createClient } from "microcms-js-sdk";
 import type { Blog } from "@/types/blog";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faTags } from "@fortawesome/free-solid-svg-icons";
 
@@ -35,7 +36,7 @@ function BlogPage({ blogs }: { blogs: Blog[] }) {
                     {
                         blogs.map((blog) => (
                             <div className="card col m-1" style={{ "maxWidth": "30rem" }} key={blog.id}>
-                                <img src={"https://images.microcms-assets.io/assets/f1f77e2dbfee45faa90eb70c5b4445f3/eaeec4b7b07641d183ca90c4b070e5fe/OGP%E7%94%BB%E5%83%8F(W1200xH630).png?txt=" + blog.title + "&txt-size=70&txt-color=ffffff&txt-align=middle,center&txt-font=Helvetica%20Neue"} alt={blog.title} />
+                                <Image src={"https://images.microcms-assets.io/assets/f1f77e2dbfee45faa90eb70c5b4445f3/eaeec4b7b07641d183ca90c4b070e5fe/OGP%E7%94%BB%E5%83%8F(W1200xH630).png?txt=" + blog.title + "&txt-size=70&txt-color=ffffff&txt-align=middle,center&txt-font=Helvetica%20Neue"} alt={blog.title} />
                                 <div className="card-body">
                                     <h5 className="card-title"><Link href={"/blog/" + blog.id}>{blog.title}</Link></h5>
                                     <div>

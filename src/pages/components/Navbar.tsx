@@ -33,7 +33,9 @@ export default function Navbar() {
                 </ul>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="/blog"><FontAwesomeIcon icon={faBlog} width={20} /> ブログ</a>
+                        <Link href="/blog">
+                            <a className="nav-link active" aria-current="page"><FontAwesomeIcon icon={faBlog} width={20} /> ブログ</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/profile"><FontAwesomeIcon icon={faUser} width={20} /> プロフィール</a>
