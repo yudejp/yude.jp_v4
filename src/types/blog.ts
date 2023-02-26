@@ -7,4 +7,10 @@ export type Blog = {
     revisedAt: Date,
     updated: Date,
     content: string,
+    tags: Tag[],
+}
+
+export type Tag = {
+    id: string,
+    name: string,
 }
