@@ -155,6 +155,9 @@ export default function Navbar() {
                                         <small className="text-muted d-block">大したソースコードを公開</small>
                                     </li>
                                     <li className="list-group-item">
+                                        <span className="d-block"><FontAwesomeIcon icon={faCheck} width={20} /> <a href="https://status.yude.jp">サービスの稼働状況</a></span>
+                                    </li>
+                                    <li className="list-group-item">
                                         <span className="d-block">🧅 <a href="http://yudejpwxp2cziclocqjfd55ucw2dh6ncswopluh7exwusjlfkvkwhwqd.onion/">Tor</a></span>
                                     </li>
                                     <li className="list-group-item">
