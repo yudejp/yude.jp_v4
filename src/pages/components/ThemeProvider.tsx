@@ -18,7 +18,7 @@ const ThemeProvider = ({ children }: Props): JSX.Element => {
         <>
             <script
                 dangerouslySetInnerHTML={{
-                    __html: `!function(){let e;const t=window.localStorage.getItem("theme");if(null!==t)e=t;else{e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",e)}();`,
+                    __html: `!function(){let e;const t=window.localStorage.getItem("theme");if(null!==t)e=t;else{e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",e);document.documentElement.setAttribute("data-bs-theme",e)}();`,
                 }}
             />
             {children}
