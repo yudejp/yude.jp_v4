@@ -33,9 +33,6 @@ export default function Navbar() {
 
     useEffect(
         () => {
-            if (query == "") {
-                setCurrentTab("other-content")
-            }
             if (query != "") {
                 setCurrentTab("query-result")
             }
