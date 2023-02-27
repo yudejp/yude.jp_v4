@@ -25,14 +25,11 @@ export default function Navbar() {
         setQuery(() => e.target.value)
     }
 
-    const handleTabChange = (eventKey: string | number) => {
-        if (typeof eventKey === 'string') {
+    const handleTabChange = (eventKey: string | null) => {
+        if (eventKey) {
             setCurrentTab(eventKey);
         }
     }
-
-    const defaultTabRef = useRef<HTMLLIElement>(null);
-    const searchTabRef = useRef<HTMLLIElement>(null);
 
     useEffect(
         () => {
