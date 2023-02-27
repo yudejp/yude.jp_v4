@@ -86,7 +86,7 @@ export default function Navbar() {
 
             {
                 isFocus && (
-                    <div className="card position-absolute top-30 start-50 translate-middle-x" style={{ zIndex: 2000 }}>
+                    <div className="card position-absolute top-30 start-50 translate-middle-x w-100" style={{ zIndex: 2000, maxWidth: "50rem" }}>
                         <Nav variant="pills" activeKey={currentTab} onSelect={handleTabChange}>
                             <Nav.Item>
                                 <Nav.Link eventKey="other-content" href="#">
