@@ -21,12 +21,14 @@ export default function Navbar() {
     const [query, setQuery] = useState('');
     const [currentTab, setCurrentTab] = useState('other-content');
 
-    const handleQueryChange = (e) => {
+    const handleQueryChange = (e: { target: { value: string; }; }) => {
         setQuery(() => e.target.value)
     }
 
-    const handleTabChange = (eventKey) => {
-        setCurrentTab(eventKey);
+    const handleTabChange = (eventKey: string | number) => {
+        if (typeof eventKey === 'string') {
+            setCurrentTab(eventKey);
+        }
     }
 
     const defaultTabRef = useRef<HTMLLIElement>(null);
@@ -40,7 +42,6 @@ export default function Navbar() {
             if (query != "") {
                 setCurrentTab("query-result")
             }
-            console.log(query);
         },
         [query]
     );
