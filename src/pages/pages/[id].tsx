@@ -23,7 +23,7 @@ import 'highlight.js/styles/night-owl.css';
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
     const data = await client.get({ endpoint: "page" });
 
-    const paths = data.contents.map((content: Blog) => `/page/${content.id}`);
+    const paths = data.contents.map((content: Blog) => `/pages/${content.id}`);
     return { paths, fallback: false };
 };
 
