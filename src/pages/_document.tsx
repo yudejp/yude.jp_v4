@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="ja">
       <Head>
         <meta name="color-scheme" content="light dark" />
+        <link rel="shortcut icon" href="/assets/images/yudejp.png" />
       </Head>
       <body className="mx-5">
         <Main />
