@@ -1,10 +1,18 @@
 import Title from './components/Title'
 import ParticlesArea from "./components/ParticlesArea";
+import Quotes from "./components/Quotes"
+
+import Image from "next/image"
 
 <>
   <Title title="ホーム"></Title>
 
   <ParticlesArea />
+
+  <Quotes />
+  <div className="bounce-target">
+  <Image src="/assets/images/yudejp.png" width={50} height={50} />
+  </div>
 
   ## Misskey インスタンスの開設のお知らせ
   * [mi.yude.moe](https://mi.yude.moe)

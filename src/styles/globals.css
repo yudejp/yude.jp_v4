@@ -29,3 +29,92 @@ button {
     height: 100%;
     z-index: -100;
 }
+
+.bounce-target {
+    display: block;
+    position: absolute;
+    -webkit-animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
+    -moz-animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
+    -o-animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
+    animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
+}
+
+@-webkit-keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 95%;
+    }
+}
+
+@-moz-keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 95%;
+    }
+}
+
+@-o-keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 95%;
+    }
+}
+
+@keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 95%;
+    }
+}
+
+@-webkit-keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 95%;
+    }
+}
+
+@-moz-keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 95%;
+    }
+}
+
+@-o-keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 95%;
+    }
+}
+
+@keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 95%;
+    }
+}
