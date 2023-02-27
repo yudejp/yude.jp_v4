@@ -65,7 +65,12 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     <span className="d-inline" suppressHydrationWarning><FontAwesomeIcon icon={faCalendar} width={20} />{new Date(blog.updated).toLocaleDateString("ja-JP")}</span>&nbsp;
                     <div className="d-inline" suppressHydrationWarning><FontAwesomeIcon icon={faTags} width={20} />
                         {
-                            blog.tags.map((tag) => (
+                            blog.tags.length !== 0 && (
+                                <FontAwesomeIcon icon={faTags} width={20} />
+                            )
+                        }
+                        {
+                            blog.tags.length !== 0 && blog.tags.map((tag) => (
                                 <span key={tag.id} className="badge text-bg-success">{tag.name}</span>
                             ))
                         }
@@ -73,7 +78,7 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     </div>
                 </div>
             </div>
-            <div className="mt-3" dangerouslySetInnerHTML={{ __html: highlightedBody }}></div>
+            <div className="mt-3" dangerouslySetInnerHTML={{ __html: highlightedBody }} style={{ minHeight: "400px" }}></div>
         </main>
     );
 }
