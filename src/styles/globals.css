@@ -39,6 +39,13 @@ button {
     animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
 }
 
+.name-gradient {
+    background-image: linear-gradient(to left, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 4px 0px 8px rgba(255, 118, 118, 0.50);
+}
+
 @-webkit-keyframes moveX {
     from {
         left: 0;

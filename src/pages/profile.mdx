@@ -7,14 +7,21 @@ import Image from 'next/image';
 
 <Title title="プロフィール" />
 
-<div className="d-flex justify-content-center">
-<span className="d-block fs-3 text-center">yude</span>
-<Image src="/assets/images/avatar.jpg" className="rounded" width={200} height={200} />\
-アイコン: [Minkasy](https://twitter.com/xmnts) さんより
+<div className="container mt-2 mb-4" style={{ maxWidth: "450px"}}>
+    <div className="row">
+        <div className="col-5">
+            <Image src="/assets/images/avatar.jpg" className="rounded d-inline" width={130} height={130} />
+        </div>
+        <div className="col-7">
+            <span className="fs-1 text-center fw-bold name-gradient">yude</span>
+            <span className="text-muted d-block fs-5">学生, 21歳</span>
+            <span className="d-block">アイコン: [Minkasy](https://twitter.com/xmnts) さんより</span>
+        </div>
+    </div>
 </div>
-
-## ステータス
-* 生年月日: 2001 年 11 月 19 日 (21 歳)
+                
+## 詳細
+* 生年月日: 2001 年 11 月 19 日
 * 出身地: 日本, 鳥取県 鳥取市
 * 所在地: 日本, 広島県 広島市
 
@@ -31,18 +38,13 @@ import Image from 'next/image';
 * 鳥取県立鳥取東高等学校 理数科 (2017/4 - 2020/3)
     * 弓道部 (2017/4 - 2019/3)
 
-## 資格 / 免許
+## 資格・免許
 * TOEIC Listening & Reading (オフライン) 860点 (2022/12)
 * IPA 基本情報技術者 (2022/4)
 * TOEIC Listening & Reading (IPテスト) 960点 (2021/12)
 * 普通自動車第一種運転免許 (AT限定, 2021/6)
 * 実用英語技能検定 2級 (2018/10)
 * 全日本弓道連盟 審査 1級 (2015)
-
-## インターン
-* 株式会社インターネットイニシアティブ (2022/9)
-* 株式会社ヒロテック (2022/8)
-
 
 ## 連絡先 / SNS
 * 電話: +81 70-8909-1949
