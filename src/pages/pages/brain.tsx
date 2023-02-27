@@ -3,8 +3,10 @@ import Ogp from "../components/Ogp";
 import Seo from "../components/Seo";
 import Title from "../components/Title";
 
+import Link from "next/link";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 function Brain() {
     const [start, setStart] = useState(false);
@@ -89,6 +91,8 @@ function Brain() {
                 <p className="mt-3">
                     <a href={"https://twitter.com/intent/tweet?text=" + rouletteContents[index].replace("<span style='font-family: serif'>", "").replace("</span>", "") + " https://www.yude.jp/pages/brain"}><FontAwesomeIcon icon={faTwitter} width={40} />ツイート</a>
                 </p>
+                <p>
+                    <Link href="https://scrapbox.io/brain-hackers/%E7%8F%8D%E5%87%BA%E5%93%81%E3%81%BE%E3%81%A8%E3%82%81">珍出品まとめ - brain-hackers</Link></p>
             </div>
         </>
     );
