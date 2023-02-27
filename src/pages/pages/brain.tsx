@@ -14,6 +14,7 @@ function Brain() {
 
     const rouletteContents = [
         "SHARP Brain",
+        "SHARP <span style='font-family: serif'>Brian</span>",
         "SHARP <span style='font-family: serif'>Brine</span>",
         "SHARP <span style='font-family: serif'>Bran</span>",
         "SHARP <span style='font-family: serif'>Brains</span>",
@@ -30,7 +31,6 @@ function Brain() {
         "<span style='font-family: serif'>SHAPE</span> 電子辞書 Brain",
         "<span style='font-family: serif'>CAISO</span> EX-word",
         "EX-<span style='font-family: serif'>ward</span>",
-        "SHARP <span style='font-family: serif'>Brian</span>",
         "CASIO EX-<span style='font-family: serif'>Wrod</span>",
         "CASIO <span style='font-family: serif'>DX</span>-word",
         "CASIO <span style='font-family: serif'>RX</span>-word",
