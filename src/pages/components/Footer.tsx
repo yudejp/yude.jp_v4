@@ -4,7 +4,10 @@ import Image from "next/image"
 export default function Footer() {
     return (
         <>
-            <span className="text-center d-block">&copy; 2023 yude. (<Link href="https://github.com/yudejp/yude.jp_v4/blob/main/README.md">ライセンス</Link>)</span>
+            <span className="text-center d-block">&copy; 2023 yude (
+                <Link href="https://github.com/yudejp/yude.jp_v4">ソースコード</Link>,&nbsp;
+                <Link href="https://github.com/yudejp/yude.jp_v4/blob/main/README.md">ライセンス</Link>
+                )</span>
             <span className="text-center d-block">Revision: <code>{process.env.VERCEL_GIT_COMMIT_SHA || "dev"}</code></span>
             <div className="text-center">
                 <a href="https://sites.google.com/site/happybusy/">
