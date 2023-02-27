@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faUser, faBlog, faComment, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
 
@@ -18,13 +19,27 @@ export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
 
     const [query, setQuery] = useState('');
+    const [currentTab, setCurrentTab] = useState('other-content');
 
     const handleQueryChange = (e) => {
         setQuery(() => e.target.value)
     }
 
+    const handleTabChange = (eventKey) => {
+        setCurrentTab(eventKey);
+    }
+
+    const defaultTabRef = useRef<HTMLLIElement>(null);
+    const searchTabRef = useRef<HTMLLIElement>(null);
+
     useEffect(
         () => {
+            if (query == "") {
+                setCurrentTab("other-content")
+            }
+            if (query != "") {
+                setCurrentTab("query-result")
+            }
             console.log(query);
         },
         [query]
@@ -60,27 +75,35 @@ export default function Navbar() {
                     </li>
                     <button type="button" className="btn btn-secondary" onClick={toggleTheme}>{theme === "light" ? "🌙" : "🌅"}</button>
                 </ul>
-
             </div>
+
             {
                 isFocus && (
                     <div className="card position-absolute top-30 start-50 translate-middle-x" style={{ zIndex: 2000 }}>
-                        <ul className="nav nav-tabs" id="myTab" role="tablist">
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link active" id="other-content-tab" data-bs-toggle="tab" data-bs-target="#other-content-tab-pane" type="button" role="tab" aria-controls="other-content-tab-pane" aria-selected="true">その他のコンテンツ</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="external-links-tab" data-bs-toggle="tab" data-bs-target="#external-links-tab-pane" type="button" role="tab" aria-controls="external-links-tab-pane" aria-selected="false">外部リンク</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="search-result-tab" data-bs-toggle="tab" data-bs-target="#search-result-tab-pane" type="button" role="tab" aria-controls="search-result-tab-pane" aria-selected="false">検索結果</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" onClick={hideDropdown}>閉じる</button>
-                            </li>
-                        </ul>
-                        <div className="tab-content" id="myTabContent">
-                            <div className="tab-pane fade show active" id="other-content-tab-pane" role="tabpanel" aria-labelledby="other-content-tab" tabIndex={0}>
+                        <Nav variant="pills" activeKey={currentTab} onSelect={handleTabChange}>
+                            <Nav.Item>
+                                <Nav.Link eventKey="other-content" href="#">
+                                    その他のコンテンツ
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="external-links" href="#">
+                                    外部リンク
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="query-result" href="#">
+                                    検索結果
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link onClick={hideDropdown}>
+                                    閉じる
+                                </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                        {
+                            currentTab === "other-content" && (
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">
                                         <span className="d-block"><FontAwesomeIcon icon={faComment} width={20} /> <Link href="/1ch">1ch</Link></span>
@@ -111,8 +134,11 @@ export default function Navbar() {
                                         <small className="text-muted d-block">yude.jp が運用するサービスの利用規約</small>
                                     </li>
                                 </ul>
-                            </div>
-                            <div className="tab-pane fade" id="external-links-tab-pane" role="tabpanel" aria-labelledby="external-links-tab" tabIndex={0}>
+                            )
+                        }
+
+                        {
+                            currentTab === "external-links" && (
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">
                                         <span className="d-block"><FontAwesomeIcon icon={faDiscord} width={20} /> <a href="https://discord.gg/X6srY7X">Discord サーバー</a></span>
@@ -134,16 +160,21 @@ export default function Navbar() {
                                         </span>
                                     </li>
                                 </ul>
-                            </div>
-                            <div className="tab-pane fade" id="search-result-tab-pane" role="tabpanel" aria-labelledby="search-result-tab" tabIndex={0}>
-                                {query === "" && (
-                                    <p className="text-center mt-4 mb-4">なにか入力してください...</p>
-                                )}
-                                {query != "" && (
-                                    <p className="text-center mt-4 mb-4">{query}</p>
-                                )}
-                            </div>
-                        </div>
+                            )
+                        }
+
+                        {
+                            currentTab === "query-result" && (
+                                <>
+                                    {query === "" && (
+                                        <p className="text-center mt-4 mb-4">なにか入力してください...</p>
+                                    )}
+                                    {query != "" && (
+                                        <p className="text-center mt-4 mb-4">{query}</p>
+                                    )}
+                                </>
+                            )
+                        }
                     </div>
                 )
             }
