@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Ogp({ title, ogp_url }: { title: string, ogp_url: string | undefined }) {
+export default function Ogp({ title, ogp_url }: { title: string, ogp_url?: string | undefined }) {
     return <Head>
         {
             ogp_url && <meta property="og.image" content={ogp_url} />
