@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUser, faBlog, faComment, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faUser, faBlog, faComment, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Button from 'react-bootstrap/Button';
@@ -67,7 +67,6 @@ export default function Navbar() {
                             <Form.Control className="search-area" onFocus={showDropdown} type="text" placeholder="なにをお探しですか？" autoComplete="off" onChange={handleQueryChange} />
                         </Form.Group>
                     </Form>
-                    <Button onClick={() => console.log("a")} variant="outline-secondary"><FontAwesomeIcon icon={faMagnifyingGlass} /></Button>
                 </ul>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
@@ -80,7 +79,7 @@ export default function Navbar() {
                             <a className="nav-link"><FontAwesomeIcon icon={faUser} width={20} /> プロフィール</a>
                         </Link>
                     </li>
-                    <button type="button" className="btn btn-secondary" onClick={toggleTheme}>{theme === "light" ? "🌙" : "🌅"}</button>
+                    <button type="button" className="btn btn-secondary" onClick={toggleTheme}>{theme === "light" ? <FontAwesomeIcon icon={faMoon} width={40} /> : <FontAwesomeIcon icon={faSun} width={40} />}</button>
                 </ul>
             </div>
 
