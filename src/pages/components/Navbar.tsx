@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
 
 import { useTheme } from '../../lib/theme'
+import { QueryResult, Blog } from "@/types/blog";
 
 export default function Navbar() {
     const [isFocus, setFocus] = useState(false);
@@ -19,6 +20,8 @@ export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
 
     const [query, setQuery] = useState('');
+    const [queryLoading, setQueryLoading] = useState(false);
+    const [queryRes, setQueryRes] = useState<QueryResult>();
     const [currentTab, setCurrentTab] = useState('other-content');
 
     const handleQueryChange = (e: { target: { value: string; }; }) => {
@@ -35,6 +38,15 @@ export default function Navbar() {
         () => {
             if (query != "") {
                 setCurrentTab("query-result")
+                setQueryLoading(true)
+                fetch('/api/searchFromBlog?keyword=' + query)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setQueryRes(data)
+                        console.log("query: " + query)
+                        console.log(data)
+                        setQueryLoading(false)
+                    })
             }
         },
         [query]
@@ -161,11 +173,34 @@ export default function Navbar() {
                         {
                             currentTab === "query-result" && (
                                 <>
+                                    <span className="text-center d-block">ブログからの検索結果</span>
                                     {query === "" && (
                                         <p className="text-center mt-4 mb-4">なにか入力してください...</p>
                                     )}
+                                    {queryLoading && (
+                                        <p className="text-center mt-4 mb-4">結果を読み込んでいます...</p>
+                                    )}
                                     {query != "" && (
-                                        <p className="text-center mt-4 mb-4">{query}</p>
+                                        <>
+                                            <ul>
+                                                {
+                                                    queryRes && queryRes.contents.map((content: Blog) => (
+                                                        <>
+                                                            <li>
+                                                                <Link href={"/blog/" + content.id}>{content.title}</Link>
+                                                            </li>
+                                                        </>
+                                                    ))
+                                                }
+                                            </ul>
+                                            {
+                                                queryRes && queryRes.contents && Object.keys(queryRes.contents).length === 0 && (
+                                                    <>
+                                                        <span className="text-center d-block mb-2">何も見つかりませんでした。</span>
+                                                    </>
+                                                )
+                                            }
+                                        </>
                                     )}
                                 </>
                             )

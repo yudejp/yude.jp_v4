@@ -14,3 +14,10 @@ export type Tag = {
     id: string,
     name: string,
 }
+
+export type QueryResult = {
+    contents: Blog[],
+    limit: number,
+    offset: number,
+    totalCount: number,
+}
