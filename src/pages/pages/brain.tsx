@@ -87,7 +87,7 @@ function Brain() {
                     {start ? "ストップ" : "スタート"}
                 </button>
                 <p className="mt-3">
-                    <a href={"https://twitter.com/intent/tweet?text=" + rouletteContents[index] + "\nhttps://www.yude.jp/pages/brain"}><FontAwesomeIcon icon={faTwitter} width={40} />ツイート</a>
+                    <a href={"https://twitter.com/intent/tweet?text=" + rouletteContents[index].replace("<span style='font-family: serif'>", "").replace("</span>", "") + " https://www.yude.jp/pages/brain"}><FontAwesomeIcon icon={faTwitter} width={40} />ツイート</a>
                 </p>
             </div>
         </>
