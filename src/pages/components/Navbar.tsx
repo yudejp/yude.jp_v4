@@ -1,25 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faUser, faBlog, faComment, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons"
 
-import { useState, useRef } from "react";
-
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
 
-import { useRecoilState, useRecoilValue } from 'recoil'
 import { useTheme } from '../../lib/theme'
 
 export default function Navbar() {
     const [isFocus, setFocus] = useState(false);
-    const toggleDropdown = () => setFocus(!isFocus);
-
-    const textInput = useRef(null);
+    const showDropdown = () => setFocus(true);
+    const hideDropdown = () => setFocus(false);
 
     const { theme, toggleTheme } = useTheme();
+
+    const [query, setQuery] = useState('');
+
+    const handleQueryChange = (e) => {
+        setQuery(() => e.target.value)
+    }
+
+    useEffect(
+        () => {
+            console.log(query);
+        },
+        [query]
+    );
 
     return (
         <>
@@ -32,11 +41,11 @@ export default function Navbar() {
                     </li>
 
                     <Form>
-                        <Form.Group controlId="formSearchInput">
-                            <Form.Control className="search-area" ref={textInput} onFocus={toggleDropdown} type="text" placeholder="なにをお探しですか？" autoComplete="off" />
+                        <Form.Group controlId="formSearchInput" style={{}}>
+                            <Form.Control className="search-area" onFocus={showDropdown} type="text" placeholder="なにをお探しですか？" autoComplete="off" onChange={handleQueryChange} />
                         </Form.Group>
                     </Form>
-                    <Button onClick={() => console.log("FUCK")} variant="outline-secondary"><FontAwesomeIcon icon={faMagnifyingGlass} /></Button>
+                    <Button onClick={() => console.log("a")} variant="outline-secondary"><FontAwesomeIcon icon={faMagnifyingGlass} /></Button>
                 </ul>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
@@ -55,7 +64,7 @@ export default function Navbar() {
             </div>
             {
                 isFocus && (
-                    <div className="card position-absolute top-30 start-50 translate-middle-x z-1000">
+                    <div className="card position-absolute top-30 start-50 translate-middle-x" style={{ zIndex: 2000 }}>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
                                 <button className="nav-link active" id="other-content-tab" data-bs-toggle="tab" data-bs-target="#other-content-tab-pane" type="button" role="tab" aria-controls="other-content-tab-pane" aria-selected="true">その他のコンテンツ</button>
@@ -67,7 +76,7 @@ export default function Navbar() {
                                 <button className="nav-link" id="search-result-tab" data-bs-toggle="tab" data-bs-target="#search-result-tab-pane" type="button" role="tab" aria-controls="search-result-tab-pane" aria-selected="false">検索結果</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link" onClick={toggleDropdown}>閉じる</button>
+                                <button className="nav-link" onClick={hideDropdown}>閉じる</button>
                             </li>
                         </ul>
                         <div className="tab-content" id="myTabContent">
@@ -126,7 +135,14 @@ export default function Navbar() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="tab-pane fade" id="search-result-tab-pane" role="tabpanel" aria-labelledby="search-result-tab" tabIndex={0}>...</div>
+                            <div className="tab-pane fade" id="search-result-tab-pane" role="tabpanel" aria-labelledby="search-result-tab" tabIndex={0}>
+                                {query === "" && (
+                                    <p className="text-center mt-4 mb-4">なにか入力してください...</p>
+                                )}
+                                {query != "" && (
+                                    <p className="text-center mt-4 mb-4">{query}</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                 )
