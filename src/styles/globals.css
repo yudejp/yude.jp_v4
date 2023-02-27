@@ -15,17 +15,12 @@ button {
     border-top: 1px solid gray
 }
 
-html[data-theme='light'] {
+:root[data-theme='light'] {
     --base-color: black;
     --base-background: #EDF2F7;
 }
 
-html[data-theme='dark'] {
+:root[data-theme='dark'] {
     --base-color: white;
     --base-background: #0D1117;
-}
-
-* {
-    background-color: var(--base-background) !important;
-    color: var(--base-color);
 }
