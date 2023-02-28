@@ -13,7 +13,7 @@ import Ogp from "../components/Ogp"
 import Title from "../components/Title"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar, faTags } from "@fortawesome/free-solid-svg-icons";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
 import cheerio from 'cheerio';
