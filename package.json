@@ -27,6 +27,7 @@
     "autoprefixer": "^10.4.13",
     "bootstrap": "^5.3.0-alpha1",
     "cheerio": "^1.0.0-rc.12",
+    "cloudflare-kv": "^2.0.3",
     "disqus-react": "^1.1.5",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.1",
