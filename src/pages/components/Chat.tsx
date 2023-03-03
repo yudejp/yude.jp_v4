@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import type { Message } from "@/types/message"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+
 export default function ChatList() {
     const [messages, setMessages] = useState<Message[]>();
     const [text, setText] = useState('');
@@ -34,6 +37,9 @@ export default function ChatList() {
         <div className="card mb-3">
             <div className="card-body">
                 <div style={{ height: "300px", overflowY: "scroll" }}>
+                    <button type="button" className="btn btn-outline-info" onClick={loadMessages} style={{ position: "absolute", top: 10, right: 40 }}>
+                        <FontAwesomeIcon icon={faArrowsRotate} width={20} /> 更新
+                    </button>
                     {isLoading && (
                         <p>チャットを読み込んでいます...</p>
                     )}
