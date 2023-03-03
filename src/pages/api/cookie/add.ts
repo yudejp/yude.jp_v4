@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+// @ts-ignore
 import CloudflareKV from "cloudflare-kv"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
