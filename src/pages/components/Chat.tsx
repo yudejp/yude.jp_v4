@@ -12,10 +12,8 @@ export default function ChatList() {
     const handleSubmit = () => {
         console.log("aaaa")
         fetch('/api/chat/add?message=' + text)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-            })
+
+        setText('')
         loadMessages();
     }
 
@@ -25,8 +23,8 @@ export default function ChatList() {
             .then((res) => res.json())
             .then((data) => {
                 setMessages(data)
-                setLoading(false)
             })
+        setLoading(false)
     }
 
     useEffect(() => {
