@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import type { Message } from "@/types/message"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 export default function ChatList() {
     const [messages, setMessages] = useState<Message[]>();
@@ -67,13 +67,12 @@ export default function ChatList() {
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                     />
-                    <input
+                    <button
                         className="btn btn-outline-secondary"
                         type="submit"
                         onSubmit={handleSubmit}
                         onClick={handleSubmit}
-                        value="送信"
-                    />
+                    ><FontAwesomeIcon icon={faPaperPlane} width={20} /> 送信</button>
                 </div>
             </div>
         </div>
