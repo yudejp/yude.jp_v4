@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const port = req.headers['x-real-port'] || req.connection.remotePort;
 
     try {
-        await limitChecker.check(res, 4, req.connection.remoteAddress || "IP_NOT_FOUND");
+        await limitChecker.check(res, 3, req.headers['x-real-ip']?.toString() || "");
     } catch (error) {
         console.error(error);
 
