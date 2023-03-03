@@ -30,14 +30,17 @@ export default function ChatList() {
         loadMessages();
     }, [])
 
-    if (isLoading) return <p>Loading...</p>
-    if (!messages) return <p>No profile data</p>
-
     return (
         <div className="card mb-3">
             <div className="card-body">
                 <div style={{ height: "300px", overflowY: "scroll" }}>
-                    {
+                    {isLoading && (
+                        <p>チャットを読み込んでいます...</p>
+                    )}
+                    {!isLoading && !messages && (
+                        <p>まだ、チャットには誰も書き込んでいません。</p>
+                    )}
+                    {!isLoading && messages &&
                         messages.map((message) => (
                             <span key={message.id}>
                                 <span>{message.message}</span>
