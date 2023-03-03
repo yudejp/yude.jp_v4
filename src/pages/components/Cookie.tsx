@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react"
-import type { Message } from "@/types/message"
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowsRotate, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 export default function ChatList() {
     const [cookie, setCookie] = useState(0);
@@ -27,7 +23,7 @@ export default function ChatList() {
         <div className="card mb-2">
             <div className="card-body text-center">
                 <p style={{ fontSize: 150, userSelect: "none" }} onClick={handleSubmit}>🍪</p>
-                <p className="fs-3">{cookie}</p>
+                <p className="fs-3">{!isLoading && cookie}</p>
             </div>
         </div>
     )
