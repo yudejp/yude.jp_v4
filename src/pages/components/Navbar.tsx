@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faUser, faBlog, faComment, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faUser, faBlog, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Nav from 'react-bootstrap/Nav';
@@ -110,10 +110,6 @@ export default function Navbar() {
                         {
                             currentTab === "other-content" && (
                                 <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faComment} width={20} /> <Link href="/1ch">1ch</Link></span>
-                                        <small className="text-muted d-block">yude.jp における、ふたばちゃんねる</small>
-                                    </li>
                                     <li className="list-group-item">
                                         <span className="d-block"><FontAwesomeIcon icon={faBook} width={20} /> <Link href="/pages">ページ一覧</Link></span>
                                         <small className="text-muted d-block">雑多なコンテンツ（覚書やおふざけ等）の一覧</small>
