@@ -72,6 +72,7 @@ export default function ChatList() {
                         type="submit"
                         onSubmit={handleSubmit}
                         onClick={handleSubmit}
+                        disabled={text === ''}
                     ><FontAwesomeIcon icon={faPaperPlane} width={20} /> 送信</button>
                 </div>
             </div>
