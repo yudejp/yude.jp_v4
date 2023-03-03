@@ -17,7 +17,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         res.status(429).json({
             text: `Rate Limited`,
-            clientIp: req.connection.remoteAddress,
         });
         return;
     }
