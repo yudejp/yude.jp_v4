@@ -13,9 +13,9 @@ export default function Footer() {
                 <a href="https://sites.google.com/site/happybusy/">
                     <Image src="/assets/images/busy_banner.png" width={200} height={40} alt="happybusy" />
                 </a>
-                <a href="https://count.getloli.com/get/@yude?theme=asoul">
-                    <img src="https://count.getloli.com/get/@yude?theme=asoul"
-                        alt="表示カウンター (count.getloli.com)"
+                <a href="https://moe-counter.yude.jp/get/@yude?theme=asoul">
+                    <img src="https://moe-counter.yude.jp/get/@yude?theme=asoul"
+                        alt="表示カウンター"
                         loading="lazy" />
                 </a>
             </div>
