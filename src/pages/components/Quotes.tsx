@@ -28,7 +28,7 @@ export default function Quotes() {
         <div className="text-center m-4">
             <span className="fs-4 d-block" style={{ fontFamily: "serif" }}>{data && data.text}</span>
             <span className="d-block">{data && data.artist} / {data && data.title}</span>
-            <button type="button" className="btn btn-outline-info" onClick={handleClick}><FontAwesomeIcon icon={faRefresh} width={50} /></button>
+            <button type="button" className="btn btn-outline-info" onClick={handleClick}><FontAwesomeIcon icon={faRefresh} width={30} /></button>
         </div>
     )
 }
