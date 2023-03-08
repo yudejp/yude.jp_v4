@@ -33,7 +33,7 @@ export default function ChatList() {
                 <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet" />
             </Head>
             <div className="card-body text-center">
-                <span className="d-block" style={{ fontSize: 200, userSelect: "none" }} onClick={handleSubmit}>
+                <span className="d-block" onClick={handleSubmit}>
                     <motion.div
                         whileHover={{ scale: 1.2, rotate: 90 }}
                         whileTap={{
@@ -41,6 +41,7 @@ export default function ChatList() {
                             rotate: -90,
                             borderRadius: "100%"
                         }}
+                        style={{ fontSize: 200, userSelect: "none" }}
                     >
                         🍪
                     </motion.div>
