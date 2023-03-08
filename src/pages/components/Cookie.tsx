@@ -18,7 +18,13 @@ export default function ChatList() {
     }
 
     useEffect(() => {
-        handleSubmit()
+        setLoading(true)
+        fetch('https://moe-counter.yude.jp/view/@:yude-button-counter')
+            .then((res) => res.json())
+            .then((data) => {
+                setCookie(data)
+                setLoading(false)
+            })
     }, [])
 
     return (
