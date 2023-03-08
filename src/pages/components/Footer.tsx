@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Footer() {
     return (
-        <>
+        <div className="mb-5">
             <span className="text-center d-block">&copy; 2023 yude (
                 <Link href="https://github.com/yudejp/yude.jp_v4">ソースコード</Link>,&nbsp;
                 <Link href="https://github.com/yudejp/yude.jp_v4/blob/main/README.md">ライセンス</Link>
@@ -19,6 +19,6 @@ export default function Footer() {
                         loading="lazy" />
                 </a>
             </div>
-        </>
+        </div>
     )
 }
