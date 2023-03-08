@@ -3,7 +3,7 @@ import type { CounterData } from "@/types/counter";
 import Head from "next/head"
 import { motion } from "framer-motion"
 
-export default function ChatList() {
+export default function Cookie() {
     const [cookie, setCookie] = useState<CounterData>({ name: "counter", num: 0 });
     const [isLoading, setLoading] = useState(false);
 
