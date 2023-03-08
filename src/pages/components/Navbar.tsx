@@ -11,6 +11,8 @@ import Link from 'next/link';
 import { useTheme } from '../../lib/theme'
 import { QueryResult, Blog } from "@/types/blog";
 
+import Logo from "./Logo"
+
 export default function Navbar() {
     const [isFocus, setFocus] = useState(false);
     const showDropdown = () => setFocus(true);
@@ -57,17 +59,17 @@ export default function Navbar() {
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
                         <Link className="nav-link" href="/" tabIndex={-1}>
-                            yude.jp
+                            <Logo />
                         </Link>
                     </li>
 
-                    <Form>
+                    <Form className="position-relative" style={{ top: "16px" }}>
                         <Form.Group controlId="formSearchInput" style={{}}>
                             <Form.Control className="search-area" onFocus={showDropdown} type="text" placeholder="なにをお探しですか？" autoComplete="off" onChange={handleQueryChange} />
                         </Form.Group>
                     </Form>
                 </ul>
-                <ul className="nav justify-content-center">
+                <ul className="nav justify-content-center mt-3">
                     <li className="nav-item">
                         <Link href="/blog" legacyBehavior>
                             <a className="nav-link active" aria-current="page"><FontAwesomeIcon icon={faBlog} width={20} /> ブログ</a>
