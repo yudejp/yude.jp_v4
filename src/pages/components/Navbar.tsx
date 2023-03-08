@@ -78,7 +78,7 @@ export default function Navbar() {
                             <a className="nav-link"><FontAwesomeIcon icon={faUser} width={20} /> プロフィール</a>
                         </Link>
                     </li>
-                    <button type="button" className="btn btn-secondary" onClick={toggleTheme}>{theme === "light" ? <FontAwesomeIcon icon={faMoon} width={40} /> : <FontAwesomeIcon icon={faSun} width={40} />}</button>
+                    <button type="button" className="btn btn-secondary" onClick={toggleTheme}>{theme === "light" ? <FontAwesomeIcon icon={faMoon} width={25} /> : <FontAwesomeIcon icon={faSun} width={25} />}</button>
                 </ul>
             </div>
 
