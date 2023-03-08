@@ -19,7 +19,7 @@ const nextConfig = {
     site_name: 'yude.jp',
   },
   images: {
-    domains: ['images.microcms-assets.io'],
+    domains: ['images.microcms-assets.io', 'i.scdn.co'],
   },
 }
 
