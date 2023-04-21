@@ -33,6 +33,7 @@ button {
 .bounce-target {
     display: block;
     position: absolute;
+    z-index: 5000;
     -webkit-animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
     -moz-animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;
     -o-animation: moveX 6s linear 0s infinite alternate, moveY 8s linear 0s infinite alternate;

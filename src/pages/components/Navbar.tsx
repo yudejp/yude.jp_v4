@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { konamiState } from './KonamiProvider'
+import { useRecoilValue } from 'recoil'
+import Konami from './Konami'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faUser, faBlog, faHeart, faBraille, faCheck, faServer, faStar, faBomb, faLink, faNewspaper, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
@@ -14,6 +17,8 @@ import { QueryResult, Blog } from "@/types/blog";
 import Logo from "./Logo"
 
 export default function Navbar() {
+    const isKonami = useRecoilValue(konamiState);
+
     const [isFocus, setFocus] = useState(false);
     const showDropdown = () => setFocus(true);
     const hideDropdown = () => setFocus(false);
@@ -55,6 +60,7 @@ export default function Navbar() {
 
     return (
         <>
+            {isKonami && <Konami />}
             <div className="container ml-5 mr-5 mt-4 aligns-items-center">
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
