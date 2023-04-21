@@ -6,7 +6,6 @@ import type { AppProps } from 'next/app'
 import { RecoilRoot } from "recoil";
 import React, { useEffect, useCallback, useState } from "react";
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 import Theme from "./components/ThemeProvider"
 import { konamiState } from '../lib/konami'
 import { useRecoilState } from 'recoil'
@@ -55,7 +54,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Theme>
         <Component {...pageProps} />
       </Theme>
-      <Footer />
     </RecoilRoot>
   )
 }
