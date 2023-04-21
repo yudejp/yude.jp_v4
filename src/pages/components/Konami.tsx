@@ -1,5 +1,5 @@
 
-import konamiState from './KonamiProvider'
+import { konamiState } from '../../lib/konami'
 import { useRecoilState } from 'recoil'
 
 export default function Konami() {

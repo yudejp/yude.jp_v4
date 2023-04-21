@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import konamiState from './KonamiProvider'
+import { konamiState } from '../../lib/konami'
 import { useRecoilValue } from 'recoil'
 import Konami from './Konami'
 

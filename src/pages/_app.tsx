@@ -8,7 +8,7 @@ import React, { useEffect, useCallback, useState } from "react";
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Theme from "./components/ThemeProvider"
-import konamiState from './components/KonamiProvider'
+import { konamiState } from '../lib/konami'
 import { useRecoilState } from 'recoil'
 
 function Konami() {
