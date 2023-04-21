@@ -15,7 +15,7 @@ export default function Logo() {
 
     return (
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="100px" viewBox="0 0 188 127" enable-background="new 0 0 188 127" xmlSpace="preserve">
+            width="100px" viewBox="0 0 188 127" enableBackground="new 0 0 188 127" xmlSpace="preserve">
             <path fill="transparent" opacity="1.000000" stroke="none"
                 d="
         M104.000000,128.000000 
