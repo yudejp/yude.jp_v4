@@ -1,6 +1,9 @@
 import { atom } from 'recoil'
 
-export const konamiState = atom({
+const konamiState = atom({
     key: 'konamiState',
     default: false
-})
+}
+)
+
+export default konamiState
