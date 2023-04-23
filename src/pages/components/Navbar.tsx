@@ -171,8 +171,11 @@ export default function Navbar() {
                                         <span className="d-block"><FontAwesomeIcon icon={faBraille} width={20} /> <a href="http://yude.i2p/?i2paddresshelper=idabfrazqbh7upvo2f5hx3ajpqglrwny66qbvcoatfqoq64ifiaq.b32.i2p">I2P</a></span>
                                     </li>
                                     <li className="list-group-item">
+                                        <span className="d-block">Gemini: <code>gemini://g.yude.jp</code></span>
+                                    </li>
+                                    <li className="list-group-item">
                                         <span className="d-block text-center">
-                                            <FontAwesomeIcon icon={faHeart} width={100} color="pink" /> <a href="https://pjsekai.sega.jp/character/unite04/nene/index.html">草薙寧々ちゃん</a> <FontAwesomeIcon icon={faHeart} width={100} color="pink" />
+                                            <FontAwesomeIcon icon={faHeart} width={20} color="pink" /> <a href="https://pjsekai.sega.jp/character/unite04/nene/index.html">草薙寧々ちゃん</a> <FontAwesomeIcon icon={faHeart} width={20} color="pink" />
                                         </span>
                                     </li>
                                 </ul>
