@@ -78,7 +78,7 @@ export default function Navbar() {
                 <ul className="nav justify-content-center mt-3">
                     <li className="nav-item">
                         <Link href="/blog" legacyBehavior>
-                            <a className="nav-link active" aria-current="page"><FontAwesomeIcon icon={faBlog} width={20} /> ブログ</a>
+                            <a className="nav-link" aria-current="page"><FontAwesomeIcon icon={faBlog} width={20} /> ブログ</a>
                         </Link>
                     </li>
                     <li className="nav-item">
@@ -119,31 +119,31 @@ export default function Navbar() {
                             currentTab === "other-content" && (
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faBook} width={20} /> <Link href="/pages">ページ一覧</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faBook} width={20} /> <Link href="/pages" onClick={hideDropdown}>ページ一覧</Link></span>
                                         <small className="text-muted d-block">雑多なコンテンツ（覚書やおふざけ等）の一覧</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faBomb} width={20} /> <Link href="/apps">アプリ</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faBomb} width={20} /> <Link href="/apps" onClick={hideDropdown}>アプリ</Link></span>
                                         <small className="text-muted d-block">ゴミ</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faStar} width={20} /> <Link href="/services">サービス</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faStar} width={20} /> <Link href="/services" onClick={hideDropdown}>サービス</Link></span>
                                         <small className="text-muted d-block">yude.jp が保有するリソースで提供中のサービス</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faServer} width={20} /> <Link href="/servers">サーバー</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faServer} width={20} /> <Link href="/servers" onClick={hideDropdown}>サーバー</Link></span>
                                         <small className="text-muted d-block">ゆでハウスなどで稼働中の自宅サーバー等</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faLink} width={20} /> <Link href="/links">リンク集</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faLink} width={20} /> <Link href="/links" onClick={hideDropdown}>リンク集</Link></span>
                                         <small className="text-muted d-block">相互リンクや、勝手に貼り付けたリンク</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faNewspaper} width={20} /> <Link href="/hcunews">@hcunews について</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faNewspaper} width={20} /> <Link href="/hcunews" onClick={hideDropdown}>@hcunews について</Link></span>
                                         <small className="text-muted d-block">広島市立大学 Webページの更新通知ボット</small>
                                     </li>
                                     <li className="list-group-item">
-                                        <span className="d-block"><FontAwesomeIcon icon={faNewspaper} width={20} /> <Link href="/tos">yude.jp サービス利用規約</Link></span>
+                                        <span className="d-block"><FontAwesomeIcon icon={faNewspaper} width={20} /> <Link href="/tos" onClick={hideDropdown}>yude.jp サービス利用規約</Link></span>
                                         <small className="text-muted d-block">yude.jp が運用するサービスの利用規約</small>
                                     </li>
                                 </ul>
