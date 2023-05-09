@@ -1,59 +1,69 @@
-import Title from './components/Title'
-import Ogp from './components/Ogp'
-import Seo from './components/Seo'
+import Title from "./components/Title";
+import Ogp from "./components/Ogp";
+import Seo from "./components/Seo";
 
 import ParticlesArea from "./components/ParticlesArea";
-import Quotes from "./components/Quotes"
-import Cookie from "./components/Cookie"
-import Chat from "./components/Chat"
+import Quotes from "./components/Quotes";
+import Cookie from "./components/Cookie";
+import Chat from "./components/Chat";
 
-import Image from "next/image"
+import Image from "next/image";
 
 <>
   <Title title="ホーム" />
   <Ogp title="ようこそ！" />
   <Seo title="ホーム" />
 
-  <ParticlesArea />
+{" "}
+<ParticlesArea />
 
-  <Quotes />
-  <a rel="me" href="https://mstdn.soine.site/@yude" style={{ display: "none" }}>Mastodon</a>
+{" "}
+<Quotes />
+<a rel="me" href="https://mstdn.soine.site/@yude" style={{ display: "none" }}>
+  Mastodon
+</a>
 
-  <div className="bounce-target">
-  <Image src="/assets/images/yudejp.png" width={50} height={50} alt="yude.jp logo" />
-  </div>
+{" "}
+<div className="bounce-target">
+  <Image
+    src="/assets/images/yudejp.png"
+    width={50}
+    height={50}
+    alt="yude.jp logo"
+  />
+</div>
 
-  <Chat />
-  <Cookie />
+{" "}
+<Chat />
+<Cookie />
 
-  ## yude.jp からのお知らせ
-  ### Mastodon インスタンスの運用をしています
-  * [「添い寝して」 - mstdn.soine.site](https://mstdn.soine.site)
-  * 新規登録を受け付けています！
+## yude.jp からのお知らせ
 
-  ### ホームページの公開スペースや、メールアドレスを取得できる共用サーバーの運用を開始しました
-  * Discord サーバーに参加している方のみ利用できます。
-  * 詳しくは [こちら](https://wiki.soine.site/) をご覧ください。
+### Mastodon インスタンスの運用をしています
 
-  ## 布教コーナー
-  ### ぼっち・ざ・ろっく！ を見てください
-  * [TVアニメ「ぼっち・ざ・ろっく！」公式サイト](https://bocchi.rocks/)
-  * [結束バンド 公式プレイリスト - playlist by Sony Music Japan \| Spotify](https://open.spotify.com/playlist/0khIb9sON6ZEbWvRQI6268?si=52afc864cbec4eb2&nd=1)
-  * [ぼっち・ざ・ろっく！ \| アニメ動画見放題 \| dアニメストア](https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25806)
-  * [アニメ「ぼっち・ざ・ろっく！」 \| Annict](https://annict.com/works/8128)
+- [「添い寝して」 - mstdn.soine.site](https://mstdn.soine.site)
+- 新規登録を受け付けています！
 
-  ### お隣の天使様にいつの間にか駄目人間にされていた件 を見てください
-  * [TVアニメ『お隣の天使様にいつの間にか駄目人間にされていた件』公式サイト](https://otonarino-tenshisama.jp/)
-  * [アニメ「お隣の天使様にいつの間にか駄目人間にされていた件」 | Annict](https://annict.com/works/9260)
-  * [お隣の天使様にいつの間にか駄目人間にされていた件 | アニメ動画見放題 | dアニメストア](https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26045)
+### ホームページの公開スペースや、メールアドレスを取得できる共用サーバーの運用を開始しました
 
-  [アラー](https://www.mcdonalds.co.jp/)
+- Discord サーバーに参加している方のみ利用できます。
+- 詳しくは [こちら](https://wiki.soine.site/) をご覧ください。
 
-  ## yude.jp on...
-  * Clearnet: [https://www.yude.jp/](https://www.yude.jp/)
-  * Tor: [yudejpwxp2cziclocqjfd55ucw2dh6ncswopluh7exwusjlfkvkwhwqd.onion](http://yudejpwxp2cziclocqjfd55ucw2dh6ncswopluh7exwusjlfkvkwhwqd.onion/)
-  * I2P: [idabfrazqbh7upvo2f5hx3ajpqglrwny66qbvcoatfqoq64ifiaq.b32.i2p](http://idabfrazqbh7upvo2f5hx3ajpqglrwny66qbvcoatfqoq64ifiaq.b32.i2p)
-  * Gemini: `gemini://g.yude.jp`
+## 布教コーナー
 
+### ぼっち・ざ・ろっく！ を見てください
+
+- [TV アニメ「ぼっち・ざ・ろっく！」公式サイト](https://bocchi.rocks/)
+- [結束バンド 公式プレイリスト - playlist by Sony Music Japan \| Spotify](https://open.spotify.com/playlist/0khIb9sON6ZEbWvRQI6268?si=52afc864cbec4eb2&nd=1)
+- [ぼっち・ざ・ろっく！ \| アニメ動画見放題 \| d アニメストア](https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25806)
+- [アニメ「ぼっち・ざ・ろっく！」 \| Annict](https://annict.com/works/8128)
+
+### お隣の天使様にいつの間にか駄目人間にされていた件 を見てください
+
+- [TV アニメ『お隣の天使様にいつの間にか駄目人間にされていた件』公式サイト](https://otonarino-tenshisama.jp/)
+- [アニメ「お隣の天使様にいつの間にか駄目人間にされていた件」 | Annict](https://annict.com/works/9260)
+- [お隣の天使様にいつの間にか駄目人間にされていた件 | アニメ動画見放題 | d アニメストア](https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26045)
+
+[アラー](https://www.mcdonalds.co.jp/)
 
 </>
