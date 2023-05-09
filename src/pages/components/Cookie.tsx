@@ -30,7 +30,7 @@ export default function Cookie() {
     return (
         <div className="card mb-2">
             <Head>
-                <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap&text=0123456789" rel="stylesheet" />
             </Head>
             <div className="card-body text-center">
                 <span className="d-block" onClick={handleSubmit}>
