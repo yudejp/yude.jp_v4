@@ -9,7 +9,7 @@ export default function Document() {
         <link rel="shortcut icon" href="/assets/images/yudejp.png" />
         <link rel="stylesheet" type="text/css" href="/assets/css/XP.css" />
       </Head>
-      <body style={{ marginLeft: `clamp(3px, 5%, 150px);`, marginRight: `clamp(3px, 5%, 150px);` }}>
+      <body className="container mx-auto">
         <Main />
         <Footer />
         <NextScript />
