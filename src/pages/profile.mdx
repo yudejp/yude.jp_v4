@@ -10,19 +10,19 @@ import Image from "next/image";
   <div className="mt-2 mb-4">
     <div className="row">
       <div
-        className="col-md-4"
-        style={{ minWidth: "450px", maxWidth: "500px" }}
+        className="col-md-6"
+        style={{ minWidth: "340px", maxWidth: "480px" }}
       >
         <div className="row">
           <div className="col-4">
             <Image
               src="/assets/images/avatar.jpg"
               className="rounded d-inline"
-              width={130}
-              height={130}
+              width={100}
+              height={100}
             />
           </div>
-          <div className="col-8">
+          <div className="col-8" style={{ marginTop: "-10px" }}>
             <span className="fs-1 text-center fw-bold name-gradient">yude</span>
             <span className="text-muted d-block fs-5">
               学生, <Age />歳
@@ -34,8 +34,8 @@ import Image from "next/image";
         </div>
         <Spotify />
       </div>
-      <div className="col-md-4">
-        <img src="https://spotify-recently-played-readme.vercel.app/api?user=yude1119&unique={true|1|on|yes}" />
+      <div className="col-md-6">
+        <img src="https://spotify-recently-played-readme.vercel.app/api?user=yude1119&unique=true&width=330" />
       </div>
     </div>
   </div>
