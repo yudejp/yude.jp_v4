@@ -29,16 +29,14 @@ function BlogPage({ blogs }: { blogs: Blog[] }) {
         <div>
             <Title title="ページ一覧" />
             <p className="fs-2">ページ一覧</p>
-            <div className="container">
-                <div className="row row-cols-2">
-                    <ul>
-                        {
-                            blogs.map((blog) => (
-                                <li key={blog.id}><Link href={"pages/" + blog.id} suppressHydrationWarning>{blog.title}</Link></li>
-                            ))
-                        }
-                    </ul>
-                </div>
+            <div className="container" style={{minHeight: "300px"}}>
+                <ul>
+                    {
+                        blogs.map((blog) => (
+                            <li key={blog.id}><Link href={"pages/" + blog.id} suppressHydrationWarning>{blog.title}</Link></li>
+                        ))
+                    }
+                </ul>
             </div>
         </div>
     );
