@@ -24,8 +24,17 @@ import Image from "next/image";
           </div>
           <div className="col-8" style={{ marginTop: "-10px" }}>
             <span className="fs-1 text-center fw-bold name-gradient">yude</span>
-            <audio controls src="/assets/yude.wav"></audio>
-            <span className="text-muted d-block fs-5">
+            <audio
+              className="d-block"
+              controls
+              src="/assets/yude.wav"
+              style={{ maxWidth: "250px" }}
+            ></audio>
+            <span className="d-block text-muted">
+              CV: <a href="https://voicevox.hiroshiba.jp/">VOICEBOX</a>{" "}
+              ずんだもん
+            </span>
+            <span className="d-block fs-5">
               大学生, <Age />歳
             </span>
             <span className="d-block" style={{ marginTop: "-15px" }}>
