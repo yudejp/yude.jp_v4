@@ -24,15 +24,18 @@ import Image from "next/image";
           </div>
           <div className="col-8" style={{ marginTop: "-10px" }}>
             <span className="fs-1 text-center fw-bold name-gradient">yude</span>
+            <audio controls src="/assets/yude.wav"></audio>
             <span className="text-muted d-block fs-5">
-              学生, <Age />歳
+              大学生, <Age />歳
             </span>
-            <span className="d-block">
+            <span className="d-block" style={{ marginTop: "-15px" }}>
               アイコン: [Minkasy](https://twitter.com/xmnts) さんより
             </span>
           </div>
         </div>
-        <Spotify />
+        <div style={{ marginTop: "-9px" }}>
+          <Spotify />
+        </div>
       </div>
       <div className="col-md-6">
         <img src="https://spotify-recently-played-readme.vercel.app/api?user=yude1119&unique=true&width=330" />
