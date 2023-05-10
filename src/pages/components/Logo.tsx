@@ -1,21 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useTheme } from '../../lib/theme'
-
 export default function Logo() {
-    const { theme, toggleTheme } = useTheme();
-    const [color, setColor] = useState("#FEFAFF");
-
-    useEffect(() => {
-        if (theme === "light") {
-            setColor("#212529")
-        } else {
-            setColor("#FEFAFF")
-        }
-    }, [theme])
-
     return (
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="100px" viewBox="0 0 188 127" enableBackground="new 0 0 188 127" xmlSpace="preserve">
+            width="150px" viewBox="0 0 188 127" enableBackground="new 0 0 188 127" xmlSpace="preserve">
             <path fill="transparent" opacity="1.000000" stroke="none"
                 d="
         M104.000000,128.000000 
@@ -76,7 +62,7 @@ export default function Logo() {
             C179.954208,50.865692 179.622314,49.159218 178.858459,48.077095 
             C174.740677,42.243652 165.489288,40.782150 158.760361,45.145054 
         z"/>
-            <path fill={color} opacity="1.000000" stroke="none"
+            <path className="color-fill" opacity="1.000000" stroke="none"
                 d="
         M7.383759,114.887474 
             C8.856617,112.973976 9.949220,111.161507 11.291307,109.557823 
@@ -91,7 +77,7 @@ export default function Logo() {
             C4.548574,126.410423 4.037380,126.518517 3.374049,126.800903 
             C4.661973,122.770210 5.889924,118.927208 7.383759,114.887474 
         z"/>
-            <path fill={color} opacity="1.000000" stroke="none"
+            <path className="color-fill" opacity="1.000000" stroke="none"
                 d="
         M138.898590,55.302189 
             C136.436798,67.944778 134.036850,80.208176 131.615204,92.582428 
@@ -114,7 +100,7 @@ export default function Logo() {
             C108.360924,84.869331 109.009804,85.113747 109.658691,85.358154 
             C113.755936,80.039864 117.853172,74.721573 122.285957,68.765839 
         z"/>
-            <path fill={color} opacity="1.000000" stroke="none"
+            <path className="color-fill" opacity="1.000000" stroke="none"
                 d="
         M96.362335,47.120827 
             C97.606201,47.273380 99.183846,47.389561 99.293320,47.852737 
@@ -129,7 +115,7 @@ export default function Logo() {
             C85.582726,57.919407 88.794617,49.945488 91.929405,42.587360 
             C96.663048,42.452709 90.700607,48.315754 96.362335,47.120827 
         z"/>
-            <path fill={color} opacity="1.000000" stroke="none"
+            <path className="color-fill" opacity="1.000000" stroke="none"
                 d="
         M159.092346,44.983562 
             C165.489288,40.782150 174.740677,42.243652 178.858459,48.077095 

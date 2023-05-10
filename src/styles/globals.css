@@ -126,3 +126,49 @@ button {
         top: 90%;
     }
 }
+
+@keyframes color-fill-anime {
+    0% {
+        fill: #F8C3CD;
+    }
+    28% {
+        fill: #F4A7B9;
+    }
+    56% {
+        fill: #F596AA;
+    }
+
+    84% {
+        fill: #E16B8C;
+    }
+    100% {
+        fill: #DB4D6D;
+    }
+}
+
+@keyframes color-drop-anime {
+    0% {
+        filter: drop-shadow(0px 0px 16px #F8C3CD);
+    }
+    28% {
+        filter: drop-shadow(0px 0px 16px #F4A7B9);
+    }
+    56% {
+        filter: drop-shadow(0px 0px 16px #F596AA);
+    }
+
+    84% {
+        filter: drop-shadow(0px 0px 16px #E16B8C);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 16px #DB4D6D);
+    }
+}
+
+.color-fill {
+    animation: color-fill-anime 4s linear infinite alternate forwards;
+}
+
+.color-drop {
+    animation: color-drop-anime 4s linear infinite alternate forwards;
+}

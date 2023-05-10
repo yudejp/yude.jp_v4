@@ -62,9 +62,9 @@ export default function Navbar() {
         <>
             {isKonami && <Konami />}
             <div className="container mt-4">
-                <div className="mx-auto" style={{ maxWidth: "400px"}}>
+                <div className="mx-auto" style={{ maxWidth: "500px"}}>
                     <div className="mx-auto" style={{ maxWidth: "50px"}}>
-                        <Link className="nav-link" href="/" tabIndex={-1} style={{ marginLeft: "-20px"}}>
+                        <Link className="nav-link color-drop" href="/" tabIndex={-1} style={{ marginLeft: "-40px"}}>
                             <Logo/>
                         </Link>
                             
