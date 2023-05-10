@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { faMusic, faUser, faRecordVinyl } from "@fortawesome/free-solid-svg-icons";
 
+import classes from "./Spotify.module.css";
+
 export default function Spotify() {
     const [data, setData] = useState<SpotifyData>();
     const [isLoading, setLoading] = useState(false);
@@ -44,7 +46,15 @@ export default function Spotify() {
                             <a href={data.link}><h5 className="card-title">{data.title}</h5></a>
                             <p className="card-text">
                                 <span className="d-block"><FontAwesomeIcon icon={faUser} width={20} /> {data.artist}</span>
-                                <span className="d-block"><FontAwesomeIcon icon={faRecordVinyl} width={20} /> {data.album}</span>
+                                    <div className="position-absolute">
+                                    <FontAwesomeIcon icon={faRecordVinyl} width={20} />
+                                    </div>
+                                    <div className="position-absolute" style={{ marginLeft: "28px", minWidth: "160px", maxWidth: "170px", width: "90%"}}>
+                                        <div className={`${classes.scroll}`}>
+                                        <span>{data.album}</span>
+                                        </div>
+                                    </div>
+                                    <div style={{height: "20px"}}></div>
                             </p>
                         </div>
                     </div>
