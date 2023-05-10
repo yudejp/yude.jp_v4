@@ -33,7 +33,7 @@ function BlogPage({ blogs }: { blogs: Blog[] }) {
                 <div className="row row-cols-2">
                     {
                         blogs.map((blog) => (
-                            <div className="card col m-1" style={{ "maxWidth": "30rem" }} key={blog.id}>
+                            <div className="card col m-1" style={{ "minWidth": "21rem", "maxWidth": "30rem" }} key={blog.id}>
                                 <img src={"https://images.microcms-assets.io/assets/f1f77e2dbfee45faa90eb70c5b4445f3/eaeec4b7b07641d183ca90c4b070e5fe/OGP%E7%94%BB%E5%83%8F(W1200xH630).png?txt=" + blog.title + "&txt-size=70&txt-color=ffffff&txt-align=middle,center&txt-font=Helvetica%20Neue"} alt={blog.title} />
                                 <div className="card-body">
 
