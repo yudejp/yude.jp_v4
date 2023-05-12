@@ -18,13 +18,7 @@ export default function Cookie() {
     }
 
     useEffect(() => {
-        setLoading(true)
-        fetch('https://moe-counter.yude.jp/view/@:yude-button-counter')
-            .then((res) => res.json())
-            .then((data) => {
-                setCookie(data)
-                setLoading(false)
-            })
+        handleSubmit()
     }, [])
 
     return (
