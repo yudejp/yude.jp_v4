@@ -197,7 +197,7 @@ export default function Navbar() {
                                                     queryRes && queryRes.contents.map((content: Blog) => (
                                                         <>
                                                             <li>
-                                                                <Link href={"/blog/" + content.id}>{content.title}</Link>
+                                                                <Link onClick={hideDropdown} href={"/blog/" + content.id}>{content.title}</Link>
                                                             </li>
                                                         </>
                                                     ))
