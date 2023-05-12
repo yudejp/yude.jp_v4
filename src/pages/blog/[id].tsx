@@ -63,7 +63,7 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 <span className="fs-2">{blog.title}</span>
                 <div>
                     <span className="d-inline" suppressHydrationWarning><FontAwesomeIcon icon={faCalendar} width={20} />{new Date(blog.updated).toLocaleDateString("ja-JP")}</span>&nbsp;
-                    <div className="d-inline" suppressHydrationWarning><FontAwesomeIcon icon={faTags} width={20} />
+                    <div className="d-inline" suppressHydrationWarning>
                         {
                             blog.tags.length !== 0 && (
                                 <FontAwesomeIcon icon={faTags} width={20} />
