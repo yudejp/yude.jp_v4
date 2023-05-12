@@ -6,7 +6,6 @@ import { loadFull } from "tsparticles";
 
 export default function ParticlesArea() {
     const particlesInit = useCallback(async (engine: Engine) => {
-        // console.log(engine);
         await loadFull(engine);
     }, []);
 
@@ -15,7 +14,6 @@ export default function ParticlesArea() {
 
     const particlesLoaded = useCallback(async (container: Container | undefined) => {
         setParticlesContainer(container);
-        // await console.log(container);
     }, []);
 
     useEffect(() => {
