@@ -87,25 +87,25 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 <div>
                     <TwitterShareButton
                         url={`https://www.yude.jp/pages/${blog.id}`}
-                        title={`${blog.title} | yude.jp`}
+                        title={`${blog.title} | yude のページ`}
                     >
                         <TwitterIcon size={32} />
                     </TwitterShareButton>
                     <HatenaShareButton
                         url={`https://www.yude.jp/pages/${blog.id}`}
-                        title={`${blog.title} | yude.jp`}
+                        title={`${blog.title} | yude のページ`}
                     >
                         <HatenaIcon size={32} />
                     </HatenaShareButton>
                     <FacebookShareButton
                         url={`https://www.yude.jp/pages/${blog.id}`}
-                        title={`${blog.title} | yude.jp`}
+                        title={`${blog.title} | yude のページ`}
                     >
                         <FacebookIcon size={32} />
                     </FacebookShareButton>
                     <TelegramShareButton
                         url={`https://www.yude.jp/pages/${blog.id}`}
-                        title={`${blog.title} | yude.jp`}
+                        title={`${blog.title} | yude のページ`}
                     >
                         <TelegramIcon size={32} />
                     </TelegramShareButton>
