@@ -5,6 +5,28 @@ import {
     NextPage,
 } from "next";
 
+import { HatenaShareCount } from 'next-share'
+
+import {
+    HatenaShareButton,
+    HatenaIcon,
+} from 'next-share'
+
+import {
+    FacebookShareButton,
+    FacebookIcon,
+} from 'next-share'
+
+import {
+    TelegramShareButton,
+    TelegramIcon,
+} from 'next-share'
+
+import {
+    TwitterShareButton,
+    TwitterIcon,
+} from 'next-share'
+
 import { client } from "../../lib/client";
 import type { Blog } from "@/types/blog";
 
@@ -61,6 +83,34 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <Seo title={blog.title} />
             <div className="text-center">
                 <span className="fs-2">{blog.title}</span>
+
+                <div>
+                    <TwitterShareButton
+                        url={`https://www.yude.jp/pages/${blog.id}`}
+                        title={`${blog.title} | yude.jp`}
+                    >
+                        <TwitterIcon size={32} />
+                    </TwitterShareButton>
+                    <HatenaShareButton
+                        url={`https://www.yude.jp/pages/${blog.id}`}
+                        title={`${blog.title} | yude.jp`}
+                    >
+                        <HatenaIcon size={32} />
+                    </HatenaShareButton>
+                    <FacebookShareButton
+                        url={`https://www.yude.jp/pages/${blog.id}`}
+                        title={`${blog.title} | yude.jp`}
+                    >
+                        <FacebookIcon size={32} />
+                    </FacebookShareButton>
+                    <TelegramShareButton
+                        url={`https://www.yude.jp/pages/${blog.id}`}
+                        title={`${blog.title} | yude.jp`}
+                    >
+                        <TelegramIcon size={32} />
+                    </TelegramShareButton>
+                </div>
+
                 <div>
                     <div className="d-inline" suppressHydrationWarning>
                         {
