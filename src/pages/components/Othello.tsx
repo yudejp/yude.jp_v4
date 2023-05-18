@@ -78,14 +78,10 @@ export default function Othello() {
         } else {
             r.black = true
         }
-
-        console.log("Passed:", turn)
-        console.log(recentPass)
         switchTurn()
         setRecentPass(r)
 
         if (r.white && r.black) {
-            console.log("wow")
             setPlaying(false)
         }
     }
@@ -296,7 +292,6 @@ export default function Othello() {
                     t[index][subIndex] = turn
                     setTable(t)
                     switchTurn()
-                    console.log("count:",notBlank + 1)
                     setNotBlank(notBlank + 1)
                     if (notBlank >= 61) {
                         setPlaying(false)
@@ -304,10 +299,9 @@ export default function Othello() {
                 } else {
                     setCannotPlace(true)
                     setTimeout(() => setCannotPlace(false), 500)
-                    console.log("cannot place")
                 }
             }else {
-                console.log("not blank")
+                setTimeout(() => setCannotPlace(false), 500)
             }
         }
     }
