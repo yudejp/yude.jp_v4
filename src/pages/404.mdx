@@ -1,5 +1,20 @@
+import Title from "./components/Title";
+import Ogp from "./components/Ogp";
+import Seo from "./components/Seo";
+
+import Othello from "./components/Othello";
+
+<Title title="404 Not Found" />
+<Ogp title="ここには何もありません。" />
+<Seo title="404 Not Found" />
+
 # 404 Not Found
 
-<div style={{ minHeight: "600px" }}>
-  <p className="text-center">ここには、何もありません</p>
+<div className="container mb-2" style={{ minHeight: "600px" }}>
+  <p className="text-center">ここには、何もありません (泣)</p>
+  <p className="text-center">代わりに、オセロを設置しておきました♪</p>
+
+  <div className="mx-auto" style={{ maxWidth: "480px" }}>
+    <Othello />
+  </div>
 </div>
