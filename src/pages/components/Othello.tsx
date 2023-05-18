@@ -301,6 +301,7 @@ export default function Othello() {
                     setTimeout(() => setCannotPlace(false), 500)
                 }
             }else {
+                setCannotPlace(true)
                 setTimeout(() => setCannotPlace(false), 500)
             }
         }
