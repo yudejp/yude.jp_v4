@@ -18,7 +18,7 @@ export default function Othello() {
         r.white = false
         setRecentPass(r)
         
-        let arr = []
+        let arr: string[] = []
 
         // All outside
         const arr_pattern = []
@@ -111,7 +111,7 @@ export default function Othello() {
         }
     }
 
-    const checkNeighbour = (index, subIndex) => {
+    const checkNeighbour = (index: number, subIndex: number) => {
         let isTurnable = false
         const enemy = turn === "white" ? "black" : "white"
 
@@ -284,7 +284,7 @@ export default function Othello() {
         return isTurnable
     }
 
-    const handleClick = (index, subIndex) => {
+    const handleClick = (index: number, subIndex: number) => {
         if (table && isPlaying) {
             let t = table.slice()
             if (t[index][subIndex] === "blank") {
