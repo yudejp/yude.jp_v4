@@ -9,7 +9,7 @@ export default function Othello() {
     const [notBlank, setNotBlank] = useState(4)
     const [cannotPlace, setCannotPlace] = useState(false)
 
-    const { theme, setTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
     const initBoard = () => {
         setPlaying(true)
