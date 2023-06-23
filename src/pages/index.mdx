@@ -10,16 +10,10 @@ import Chat from "./components/Chat";
 import Image from "next/image";
 
 <>
-  <Title title="ホーム" />
-  <Ogp title="ようこそ！" />
-  <Seo title="ホーム" />
-
+<Title title="ホーム" />
+<Ogp title="ようこそ！" />
+<Seo title="ホーム" />
 <Quotes />
-<a rel="me" href="https://mstdn.soine.site/@yude" style={{ display: "none" }}>
-  Mastodon
-</a>
-
-{" "}
 
 <div className="bounce-target">
   <Image
@@ -29,8 +23,6 @@ import Image from "next/image";
     alt="yude.jp logo"
   />
 </div>
-
-{" "}
 
 <Chat />
 <Cookie />
@@ -65,5 +57,8 @@ import Image from "next/image";
 [アラー](https://www.mcdonalds.co.jp/)
 
 <ParticlesArea />
+<a rel="me" href="https://mstdn.soine.site/@yude" style={{ display: "none" }}>
+  Mastodon
+</a>
 
 </>
