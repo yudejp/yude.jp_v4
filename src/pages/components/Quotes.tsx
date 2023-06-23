@@ -89,9 +89,8 @@ export default function Quotes() {
           <motion.div
             key={data.text}
             style={{
-              overflow: "hidden",
+              overflow: "scroll",
               display: "flex",
-              fontSize: "2rem",
             }}
             variants={container}
             initial="hidden"
