@@ -1,18 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 import type { Quote } from "@/types/quote";
+import { motion } from "framer-motion";
 
 export default function Quotes() {
   const [data, setData] = useState<Quote>();
+  const quoteRef = useRef(null);
   const fetchData = async () => {
     const req = await fetch("./assets/quotes.json");
     const jsonData = await req.json();
-
     const len = jsonData.length;
-    return setData(jsonData[Math.floor(Math.random() * len)]);
+    const picked = jsonData[Math.floor(Math.random() * len)];
+
+    return setData(picked);
+  };
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+    }),
+  };
+
+  const child = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      x: -20,
+      y: 10,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
   };
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -26,7 +60,7 @@ export default function Quotes() {
 
   return (
     <div
-      className="position-relative text-center mt-2 mb-2 shadow-lg p-2 rounded text-info"
+      className="position-relative text-center mt-2 mb-2 shadow-lg p-2 rounded text-black"
       style={{
         backgroundImage: `url("./assets/images/marisa.png")`,
         backgroundPositionY: "400px",
@@ -47,20 +81,39 @@ export default function Quotes() {
         </a>
         )
       </span>
-      <span
-        className="fs-4 d-block"
-        style={{ fontFamily: "serif", textShadow: `1px 1px 3px #9ADDFC` }}
+      <div
+        className="fs-4 container"
+        style={{ fontFamily: "serif", textShadow: `1px 1px 3px gray` }}
       >
-        {data && data.text}
-      </span>
+        {data && (
+          <motion.div
+            key={data.text}
+            style={{
+              overflow: "hidden",
+              display: "flex",
+              fontSize: "2rem",
+            }}
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="justify-content-center"
+          >
+            {Array.from(data.text).map((letter, index) => (
+              <motion.span variants={child} key={index}>
+                {letter === " " ? "\u00A0" : letter}
+              </motion.span>
+            ))}
+          </motion.div>
+        )}
+      </div>
       <span className="d-block">
-        <a className="text-info" href={data && data.source}>
+        <a className="text-black" href={data && data.source}>
           {data && data.artist} / {data && data.title}
         </a>
       </span>
       <button
         type="button"
-        className="btn btn-outline-info"
+        className="btn btn-outline-secondary"
         onClick={handleClick}
       >
         <FontAwesomeIcon icon={faRefresh} width={30} />
