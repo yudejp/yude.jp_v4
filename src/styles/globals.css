@@ -2,6 +2,10 @@
     max-width: 25rem;
 }
 
+body {
+    font-family: sans-serif !important;
+}
+
 button {
     min-width: 3rem;
 }
