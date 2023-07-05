@@ -5,8 +5,8 @@ export default function Footer() {
     return (
         <div className="mb-5">
             <span className="text-center d-block">&copy; 2023 yude (
-                <Link href="https://github.com/yudejp/yude.jp_v4">ソースコード</Link>,&nbsp;
-                <Link href="https://github.com/yudejp/yude.jp_v4/blob/main/README.md">ライセンス</Link>
+                <Link href="https://github.com/yudejp/yude.jp">ソースコード</Link>,&nbsp;
+                <Link href="https://github.com/yudejp/yude.jp/blob/main/README.md">ライセンス</Link>
                 )</span>
             <span className="text-center d-block">Revision: <code>{process.env.VERCEL_GIT_COMMIT_SHA || "dev"}</code></span>
             <div className="text-center">
