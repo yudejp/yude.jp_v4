@@ -5,10 +5,9 @@ import { faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 import type { Quote } from "@/types/quote";
 import { motion } from "framer-motion";
-
 export default function Quotes() {
   const [data, setData] = useState<Quote>();
-  const quoteRef = useRef(null);
+
   const fetchData = async () => {
     const req = await fetch("./assets/quotes.json");
     const jsonData = await req.json();
@@ -82,20 +81,23 @@ export default function Quotes() {
         )
       </span>
       <div
-        className="fs-4 container"
-        style={{ fontFamily: "serif", textShadow: `1px 1px 3px gray` }}
+        className={`fs-4 container`}
+        style={{
+          fontFamily: "serif",
+          textShadow: `1px 1px 3px gray`,
+        }}
       >
         {data && (
           <motion.div
             key={data.text}
             style={{
-              overflow: "scroll",
-              display: "flex",
+              display: "inline-flex",
+              flexWrap: "wrap",
             }}
             variants={container}
             initial="hidden"
             animate="visible"
-            className="justify-content-center"
+            className={`justify-content-center`}
           >
             {Array.from(data.text).map((letter, index) => (
               <motion.span variants={child} key={index}>
