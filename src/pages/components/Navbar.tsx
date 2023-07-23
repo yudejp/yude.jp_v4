@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { konamiState } from "@/lib/konami";
 import { useRecoilValue } from "recoil";
 import Konami from "@/pages/components/Konami";
@@ -21,53 +21,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
 import Link from "next/link";
 
 import { useTheme } from "@/lib/theme";
-import { QueryResult, Blog } from "@/types/blog";
 
 import Logo from "./Logo";
 
 export default function Navbar() {
   const isKonami = useRecoilValue(konamiState);
-
-  const [isFocus, setFocus] = useState(false);
-  const showDropdown = () => setFocus(true);
-  const hideDropdown = () => setFocus(false);
-
   const { theme, toggleTheme } = useTheme();
-
-  const [query, setQuery] = useState("");
-  const [queryLoading, setQueryLoading] = useState(false);
-  const [queryRes, setQueryRes] = useState<QueryResult>();
-  const [currentTab, setCurrentTab] = useState("other-content");
-
-  const handleQueryChange = (e: { target: { value: string } }) => {
-    setQuery(() => e.target.value);
-  };
-
-  const handleTabChange = (eventKey: string | null) => {
-    if (eventKey) {
-      setCurrentTab(eventKey);
-    }
-  };
-
-  useEffect(() => {
-    if (query != "") {
-      setCurrentTab("query-result");
-      setQueryLoading(true);
-      fetch("/api/searchFromBlog?keyword=" + query)
-        .then((res) => res.json())
-        .then((data) => {
-          setQueryRes(data);
-          console.log("query: " + query);
-          console.log(data);
-          setQueryLoading(false);
-        });
-    }
-  }, [query]);
 
   return (
     <>
@@ -180,8 +142,7 @@ export default function Navbar() {
                     <li>
                       <Link legacyBehavior href="/links">
                         <a className="dropdown-item" href="#">
-                          <FontAwesomeIcon icon={faNewspaper} width={20} />{" "}
-                          リンク集
+                          <FontAwesomeIcon icon={faLink} width={20} /> リンク集
                         </a>
                       </Link>
                     </li>
