@@ -67,7 +67,7 @@ export default function Quotes() {
         backgroundBlendMode: "lighten",
       }}
     >
-      <span
+      <p
         className="position-absolute text-secondary"
         style={{ bottom: "3px", right: "3px" }}
       >
@@ -79,7 +79,13 @@ export default function Quotes() {
           @NekoSemi96
         </a>
         )
-      </span>
+      </p>
+      <p
+        className="position-absolute text-secondary"
+        style={{ bottom: "-15px", right: "3px" }}
+      >
+        括弧内は、特に作詞者を示します。
+      </p>
       <div
         className={`fs-4 container`}
         style={{
