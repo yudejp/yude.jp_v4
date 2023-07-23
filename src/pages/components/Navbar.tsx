@@ -39,13 +39,13 @@ export default function Navbar() {
     <>
       {isKonami && <Konami />}
 
-      <nav className="navbar border-bottom border-bottom-dark bg-body-tertiary fixed-top">
+      <nav className="navbar border-bottom bg-body-tertiary fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand">
-            <Link href="/">
+          <Link legacyBehavior href="/">
+            <a className="navbar-brand">
               <Logo />
-            </Link>
-          </a>
+            </a>
+          </Link>
           <button
             type="button"
             className="btn btn-secondary"
