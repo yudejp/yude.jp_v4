@@ -1,4 +1,4 @@
-import { db } from "../../../lib/firebase";
+import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { LimitChecker } from "@/lib/limitChecker";
 import type { NextApiRequest, NextApiResponse } from 'next'

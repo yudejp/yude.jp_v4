@@ -1,32 +1,32 @@
-import '@/styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "@/styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 
 import { RecoilRoot } from "recoil";
 import React, { useEffect, useCallback, useState } from "react";
-import Navbar from './components/Navbar'
-import Theme from "./components/ThemeProvider"
-import { konamiState } from '../lib/konami'
-import { useRecoilState } from 'recoil'
+import Navbar from "@/pages/components/Navbar";
+import Theme from "@/pages/components/ThemeProvider";
+import { konamiState } from "@/lib/konami";
+import { useRecoilState } from "recoil";
 
 function Konami() {
   const [_, setKonami] = useRecoilState(konamiState);
 
-  const [keys, setKeys] = useState<KeyboardEvent["keyCode"][]>([])
+  const [keys, setKeys] = useState<KeyboardEvent["keyCode"][]>([]);
 
-  const targetKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+  const targetKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 
   const keyFunc = useCallback((event: KeyboardEvent) => {
-    console.log("This key: " + event.keyCode)
-    addKey(event.keyCode)
+    console.log("This key: " + event.keyCode);
+    addKey(event.keyCode);
   }, []);
 
   const addKey = (key: KeyboardEvent["keyCode"]) => {
     if (typeof key != undefined) {
-      setKeys(keys => [...keys, key]);
+      setKeys((keys) => [...keys, key]);
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", keyFunc, false);
@@ -35,15 +35,15 @@ function Konami() {
   useEffect(() => {
     if (keys.length > 10) {
       const [_, ...newKeys] = keys;
-      setKeys(newKeys)
+      setKeys(newKeys);
     }
     console.log(keys);
     if (arraysEqual(keys, targetKeys)) {
-      setKonami(true)
+      setKonami(true);
     }
-  }, [keys])
+  }, [keys]);
 
-  return null
+  return null;
 }
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -55,10 +55,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Theme>
     </RecoilRoot>
-  )
+  );
 }
 
-function arraysEqual(a: KeyboardEvent["keyCode"][], b: KeyboardEvent["keyCode"][]) {
+function arraysEqual(
+  a: KeyboardEvent["keyCode"][],
+  b: KeyboardEvent["keyCode"][]
+) {
   if (a === b) return true;
   if (a == null || b == null) return false;
   if (a.length !== b.length) return false;
