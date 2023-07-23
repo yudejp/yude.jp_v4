@@ -140,7 +140,7 @@ export default function Navbar() {
           >
             <Nav.Item>
               <Nav.Link eventKey="other-content" href="#">
-                その他のコンテンツ
+                コンテンツ
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
