@@ -72,48 +72,14 @@ export default function Navbar() {
   return (
     <>
       {isKonami && <Konami />}
-      <div className="container mt-4">
-        <div className="mx-auto" style={{ maxWidth: "500px" }}>
-          <div className="mx-auto" style={{ maxWidth: "50px" }}>
-            <Link
-              className="nav-link color-drop"
-              href="/"
-              tabIndex={-1}
-              style={{ marginLeft: "-40px" }}
-            >
+
+      <nav className="navbar border-bottom border-bottom-dark bg-body-tertiary fixed-top">
+        <div className="container-fluid">
+          <a className="navbar-brand">
+            <Link href="/">
               <Logo />
             </Link>
-          </div>
-          <div className="mx-auto" style={{ width: "100%" }}>
-            <Form>
-              <Form.Group controlId="formSearchInput" style={{}}>
-                <Form.Control
-                  className="search-area"
-                  onFocus={showDropdown}
-                  type="text"
-                  placeholder="ここをクリックして遷移 または 入力してください..."
-                  autoComplete="off"
-                  onChange={handleQueryChange}
-                />
-              </Form.Group>
-            </Form>
-          </div>
-        </div>
-        <ul className="nav justify-content-center mt-3">
-          <li className="nav-item">
-            <Link href="/blog" legacyBehavior>
-              <a className="nav-link" aria-current="page">
-                <FontAwesomeIcon icon={faBlog} width={20} /> ブログ
-              </a>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/profile" legacyBehavior>
-              <a className="nav-link">
-                <FontAwesomeIcon icon={faUser} width={20} /> プロフィール
-              </a>
-            </Link>
-          </li>
+          </a>
           <button
             type="button"
             className="btn btn-secondary"
@@ -125,211 +91,185 @@ export default function Navbar() {
               <FontAwesomeIcon icon={faSun} width={25} />
             )}
           </button>
-        </ul>
-      </div>
-
-      {isFocus && (
-        <div
-          className="card position-absolute top-30 start-50 translate-middle-x w-100"
-          style={{ zIndex: 2000, maxWidth: "50rem" }}
-        >
-          <Nav
-            variant="pills"
-            activeKey={currentTab}
-            onSelect={handleTabChange}
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
           >
-            <Nav.Item>
-              <Nav.Link eventKey="other-content" href="#">
-                コンテンツ
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="external-links" href="#">
-                外部リンク
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="query-result" href="#">
-                検索結果
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link onClick={hideDropdown}>閉じる</Nav.Link>
-            </Nav.Item>
-          </Nav>
-          {currentTab === "other-content" && (
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faBook} width={20} />{" "}
-                  <Link href="/pages" onClick={hideDropdown}>
-                    ページ
-                  </Link>
-                </span>
-                <small className="text-muted d-block">
-                  雑多なコンテンツ（覚書やおふざけ等）
-                </small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faBomb} width={20} />{" "}
-                  <Link href="/apps" onClick={hideDropdown}>
-                    アプリ
-                  </Link>
-                </span>
-                <small className="text-muted d-block">ゴミ なにこれ？</small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faStar} width={20} />{" "}
-                  <Link href="/services" onClick={hideDropdown}>
-                    サービス
-                  </Link>
-                </span>
-                <small className="text-muted d-block">
-                  yude.jp が保有するリソースで提供中のサービス
-                </small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faServer} width={20} />{" "}
-                  <Link href="/servers" onClick={hideDropdown}>
-                    サーバー
-                  </Link>
-                </span>
-                <small className="text-muted d-block">
-                  ゆでハウスなどで稼働中の自宅サーバーまたはクラウド上に存在する計算資源
-                </small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faLink} width={20} />{" "}
-                  <Link href="/links" onClick={hideDropdown}>
-                    リンク集
-                  </Link>
-                </span>
-                <small className="text-muted d-block">
-                  相互リンクや、勝手に貼り付けたリンク
-                </small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faNewspaper} width={20} />{" "}
-                  <Link href="/tos" onClick={hideDropdown}>
-                    yude.jp サービス利用規約
-                  </Link>
-                </span>
-                <small className="text-muted d-block">
-                  yude.jp が運用するサービスの利用規約
-                </small>
-              </li>
-            </ul>
-          )}
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-          {currentTab === "external-links" && (
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faDiscord} width={20} />{" "}
-                  <a href="https://discord.gg/X6srY7X">Discord サーバー</a>
-                </span>
-                <small className="text-muted d-block">
-                  自由に会話（合法的に）
-                </small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faGithub} width={20} />{" "}
-                  <a href="https://github.com/yudejp">GitHub Organization</a>
-                </span>
-                <small className="text-muted d-block">
-                  大したソースコードを公開
-                </small>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faCheck} width={20} />{" "}
-                  <a href="https://status.yude.jp">サービスの稼働状況</a>
-                </span>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  🧅{" "}
-                  <a href="http://yudejpwxp2cziclocqjfd55ucw2dh6ncswopluh7exwusjlfkvkwhwqd.onion/">
-                    Tor
-                  </a>
-                </span>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  <FontAwesomeIcon icon={faBraille} width={20} />{" "}
-                  <a href="http://yude.i2p/?i2paddresshelper=idabfrazqbh7upvo2f5hx3ajpqglrwny66qbvcoatfqoq64ifiaq.b32.i2p">
-                    I2P
-                  </a>
-                </span>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block">
-                  Gemini: <code>gemini://g.yude.jp</code>
-                </span>
-              </li>
-              <li className="list-group-item">
-                <span className="d-block text-center">
-                  <FontAwesomeIcon icon={faHeart} width={20} color="pink" />{" "}
-                  <a href="https://pjsekai.sega.jp/character/unite04/nene/index.html">
-                    草薙寧々ちゃん
-                  </a>{" "}
-                  <FontAwesomeIcon icon={faHeart} width={20} color="pink" />
-                </span>
-              </li>
-            </ul>
-          )}
+          <div
+            className="offcanvas offcanvas-end"
+            tabIndex={-1}
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+            style={{ zIndex: 5000 }}
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+                サイトメニュー
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
 
-          {currentTab === "query-result" && (
-            <>
-              <span className="text-center d-block">ブログからの検索結果</span>
-              {query === "" && (
-                <p className="text-center mt-4 mb-4">
-                  なにか入力してください...
-                </p>
-              )}
-              {queryLoading && (
-                <p className="text-center mt-4 mb-4">
-                  結果を読み込んでいます...
-                </p>
-              )}
-              {query != "" && (
-                <>
-                  <ul>
-                    {queryRes &&
-                      queryRes.contents.map((content: Blog) => (
-                        <>
-                          <li>
-                            <Link
-                              onClick={hideDropdown}
-                              href={"/blog/" + content.id}
-                            >
-                              {content.title}
-                            </Link>
-                          </li>
-                        </>
-                      ))}
+            <div className="offcanvas-body">
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li className="nav-item mb-2">
+                  <Link legacyBehavior href="/blog">
+                    <a className="dropdown-item" href="#">
+                      <FontAwesomeIcon icon={faBlog} width={20} /> ブログ
+                    </a>
+                  </Link>
+                </li>
+                <li className="nav-item mb-2 mt-2">
+                  <Link legacyBehavior href="/profile">
+                    <a className="dropdown-item" href="#">
+                      <FontAwesomeIcon icon={faUser} width={20} /> プロフィール
+                    </a>
+                  </Link>
+                </li>
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    その他のコンテンツ
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link legacyBehavior href="/pages">
+                        <a className="dropdown-item" href="#">
+                          <FontAwesomeIcon icon={faBook} width={20} /> ページ
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="/apps">
+                        <a className="dropdown-item" href="#">
+                          <FontAwesomeIcon icon={faBomb} width={20} /> アプリ
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="/services">
+                        <a className="dropdown-item" href="#">
+                          <FontAwesomeIcon icon={faStar} width={20} /> サービス
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="/servers">
+                        <a className="dropdown-item" href="#">
+                          <FontAwesomeIcon icon={faServer} width={20} />{" "}
+                          サーバー
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="/links">
+                        <a className="dropdown-item" href="#">
+                          <FontAwesomeIcon icon={faNewspaper} width={20} />{" "}
+                          リンク集
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="/tos">
+                        <a className="dropdown-item" href="#">
+                          <FontAwesomeIcon icon={faNewspaper} width={20} />{" "}
+                          yude.jp サービス利用規約
+                        </a>
+                      </Link>
+                    </li>
                   </ul>
-                  {queryRes &&
-                    queryRes.contents &&
-                    Object.keys(queryRes.contents).length === 0 && (
-                      <>
-                        <span className="text-center d-block mb-2">
-                          何も見つかりませんでした。
-                        </span>
-                      </>
-                    )}
-                </>
-              )}
-            </>
-          )}
+                </li>
+
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    外部リンク
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="https://discord.gg/X6srY7X"
+                      >
+                        <FontAwesomeIcon icon={faDiscord} width={20} /> Discord
+                        サーバー
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="https://github.com/yudejp"
+                      >
+                        <FontAwesomeIcon icon={faGithub} width={20} /> GitHub
+                        Organization
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="https://status.yude.jp"
+                      >
+                        <FontAwesomeIcon icon={faCheck} width={20} />{" "}
+                        サービスの稼働状況
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="http://yudejpwxp2cziclocqjfd55ucw2dh6ncswopluh7exwusjlfkvkwhwqd.onion/"
+                      >
+                        🧅 Tor
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="http://yude.i2p/?i2paddresshelper=idabfrazqbh7upvo2f5hx3ajpqglrwny66qbvcoatfqoq64ifiaq.b32.i2p"
+                      >
+                        <FontAwesomeIcon icon={faBraille} width={20} /> I2P
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item">
+                        Gemini: <code>gemini://g.yude.jp</code>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="https://pjsekai.sega.jp/character/unite04/nene/index.html"
+                      >
+                        <FontAwesomeIcon icon={faHeart} width={20} /> 草薙寧々
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      )}
+      </nav>
     </>
   );
 }
