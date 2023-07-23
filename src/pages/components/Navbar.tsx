@@ -89,15 +89,19 @@ export default function Navbar() {
 
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li className="nav-item mb-2">
-                  <Link legacyBehavior href="/blog">
+                <li className="nav-item mb-2" data-bs-dismiss="offcanvas">
+                  <Link legacyBehavior href="/blog" data-bs-dismiss="offcanvas">
                     <a className="dropdown-item">
                       <FontAwesomeIcon icon={faBlog} width={20} /> ブログ
                     </a>
                   </Link>
                 </li>
-                <li className="nav-item mb-2 mt-2">
-                  <Link legacyBehavior href="/profile">
+                <li className="nav-item mb-2 mt-2" data-bs-dismiss="offcanvas">
+                  <Link
+                    legacyBehavior
+                    href="/profile"
+                    data-bs-dismiss="offcanvas"
+                  >
                     <a className="dropdown-item">
                       <FontAwesomeIcon icon={faUser} width={20} /> プロフィール
                     </a>
@@ -119,28 +123,28 @@ export default function Navbar() {
                     その他のコンテンツ
                   </a>
                   <ul className="dropdown-menu">
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link legacyBehavior href="/pages">
                         <a className="dropdown-item">
                           <FontAwesomeIcon icon={faBook} width={20} /> ページ
                         </a>
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link legacyBehavior href="/apps">
                         <a className="dropdown-item">
                           <FontAwesomeIcon icon={faBomb} width={20} /> アプリ
                         </a>
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link legacyBehavior href="/services">
                         <a className="dropdown-item">
                           <FontAwesomeIcon icon={faStar} width={20} /> サービス
                         </a>
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link legacyBehavior href="/servers">
                         <a className="dropdown-item">
                           <FontAwesomeIcon icon={faServer} width={20} />{" "}
@@ -148,14 +152,14 @@ export default function Navbar() {
                         </a>
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link legacyBehavior href="/links">
                         <a className="dropdown-item">
                           <FontAwesomeIcon icon={faLink} width={20} /> リンク集
                         </a>
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link legacyBehavior href="/tos">
                         <a className="dropdown-item">
                           <FontAwesomeIcon icon={faNewspaper} width={20} />{" "}
