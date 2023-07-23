@@ -39,7 +39,7 @@ export default function Cookie() {
             className={`${Rampart.use}`}
             style={{ fontSize: 100, userSelect: "none" }}
           >
-            <FontAwesomeIcon icon={faCookie} width={500} />
+            🍪
           </motion.div>
         </span>
         <span
