@@ -19,7 +19,11 @@ import {
   faMoon,
   faSun,
 } from "@fortawesome/free-solid-svg-icons";
-import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faDiscord,
+  faGithub,
+  faMastodon,
+} from "@fortawesome/free-brands-svg-icons";
 
 import Link from "next/link";
 
@@ -87,22 +91,27 @@ export default function Navbar() {
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item mb-2">
                   <Link legacyBehavior href="/blog">
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item">
                       <FontAwesomeIcon icon={faBlog} width={20} /> ブログ
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item mb-2 mt-2">
                   <Link legacyBehavior href="/profile">
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item">
                       <FontAwesomeIcon icon={faUser} width={20} /> プロフィール
                     </a>
                   </Link>
                 </li>
+                <li className="nav-item mb-2 mt-2">
+                  <a className="dropdown-item" href="https://mstdn.soine.site">
+                    <FontAwesomeIcon icon={faMastodon} width={20} /> Mastodon
+                    インスタンス: mstdn.soine.site
+                  </a>
+                </li>
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
-                    href="#"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -112,28 +121,28 @@ export default function Navbar() {
                   <ul className="dropdown-menu">
                     <li>
                       <Link legacyBehavior href="/pages">
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item">
                           <FontAwesomeIcon icon={faBook} width={20} /> ページ
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link legacyBehavior href="/apps">
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item">
                           <FontAwesomeIcon icon={faBomb} width={20} /> アプリ
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link legacyBehavior href="/services">
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item">
                           <FontAwesomeIcon icon={faStar} width={20} /> サービス
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link legacyBehavior href="/servers">
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item">
                           <FontAwesomeIcon icon={faServer} width={20} />{" "}
                           サーバー
                         </a>
@@ -141,14 +150,14 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link legacyBehavior href="/links">
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item">
                           <FontAwesomeIcon icon={faLink} width={20} /> リンク集
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link legacyBehavior href="/tos">
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item">
                           <FontAwesomeIcon icon={faNewspaper} width={20} />{" "}
                           yude.jp サービス利用規約
                         </a>
@@ -160,7 +169,6 @@ export default function Navbar() {
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
-                    href="#"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
