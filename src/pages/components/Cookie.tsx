@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import type { CounterData } from "@/types/counter";
 import Rampart from "./Rampart.module.css";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCookie } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cookie() {
   const [cookie, setCookie] = useState<CounterData>({
@@ -29,21 +31,20 @@ export default function Cookie() {
       <div className="card-body text-center">
         <span className="d-block" onClick={handleSubmit}>
           <motion.div
-            whileHover={{ scale: 1.2, rotate: 90 }}
             whileTap={{
               scale: 0.8,
               rotate: -90,
               borderRadius: "100%",
             }}
             className={`${Rampart.use}`}
-            style={{ fontSize: 200, userSelect: "none" }}
+            style={{ fontSize: 100, userSelect: "none" }}
           >
-            🍪
+            <FontAwesomeIcon icon={faCookie} width={500} />
           </motion.div>
         </span>
         <span
           className="d-block"
-          style={{ fontFamily: "Rampart One", fontSize: 70 }}
+          style={{ fontFamily: "Rampart One", fontSize: 50 }}
         >
           {!isLoading && cookie && cookie.num}
           {isLoading && cookie.num}
