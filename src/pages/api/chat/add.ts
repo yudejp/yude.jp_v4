@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { LimitChecker } from "@/lib/limitChecker";

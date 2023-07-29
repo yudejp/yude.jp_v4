@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { db } from "@/lib/firebase";
 import { collection, DocumentData, getDocs } from "firebase/firestore";
 import type { NextApiRequest, NextApiResponse } from 'next'

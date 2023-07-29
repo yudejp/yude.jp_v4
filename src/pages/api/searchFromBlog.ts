@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { client } from "@/lib/microcms";
 import type { NextApiRequest, NextApiResponse } from 'next'
 
